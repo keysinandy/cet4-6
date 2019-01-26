@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/index/index/index",
+        "pages/index/index/index",
+    "pages/my/myInfo/myInfo",
+    "pages/my/myInfo/change",
     "pages/register/register",
     "pages/index/cet/text/text",
     "pages/index/cet/readmind/readmind",
     "pages/index/cet/translate/translate",
     "pages/index/daily/more",
     "pages/index/daily/daily",
-    "pages/my/myInfo/myInfo",
-    "pages/my/myInfo/change",
     "pages/introduce/introduce",
     "pages/my/my/my",
     "pages/index/cet/cloze/cloze",
@@ -64,6 +64,7 @@
     "van-picker": "/dist/picker/index",
     "van-action-sheet": "/dist/action-sheet/index",
     "van-button": "/dist/button/index",
-    "i-action-sheet": "/compenent/dist/action-sheet/index"
+    "i-action-sheet": "/compenent/dist/action-sheet/index",
+    "i-input": "/compenent/dist/input/index"
   }
 }

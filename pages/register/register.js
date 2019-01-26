@@ -53,7 +53,6 @@ Page({
 
   },
   formSubmit(e){
-    console.log(e.detail.value)
     var openid = wx.getStorageSync('openid')
     wx.request({
       url: userUrl+'setInfo',
@@ -68,7 +67,7 @@ Page({
       },
       success(e){
         console.log("注册返回信息：",e)
-        
+        wx.setStorageSync('userinfo', e.data.data[0])
         wx.navigateBack({
           delta:111,
         })

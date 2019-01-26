@@ -1,10 +1,14 @@
-<view class="weui-cells weui-cells_after-title">
-  <view class="weui-cell weui-cell_input">
-    <view class="weui-cell__bd">
-      <input class="weui-input" bindchange='valueChange' placeholder="{{placeholder}}" value='{{value}}' auto-focus='true'/>
-</view>
-    <view class="weui-cell__ft">
-      <view class="weui-vcode-btn"  bindtap='submit'>保存</view>
-    </view>
-  </view>
-</view>
+<van-cell-group>
+  <van-field
+    value="{{ changeText }}"
+    center
+    clearable
+    label='更改：'
+    placeholder="请输入更改的信息"
+    border="false"
+    use-button-slot
+    bind:change="onChange"
+  >
+    <van-button slot="button" size="small" type="primary" bindtap='save'>保存更改</van-button>
+  </van-field>
+</van-cell-group>

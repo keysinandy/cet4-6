@@ -43,11 +43,9 @@ Page({
     }
   },
   onShow(){
-    console.log("onshow", this.data.active)
     this.setData({
       active: 0
     })
-    console.log(this.data.active)
   },
   getUserInfo: function (e) {
 
