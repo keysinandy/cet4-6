@@ -1,0 +1,106 @@
+/* pages/index/index.wxss */
+.maintitle{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  color:#666666;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding:20rpx;
+  border: 1rpx solid #CCCCFF;
+}
+
+
+.maintitle .more{
+  margin-right:30rpx;
+}
+
+.maintitle .arrow{
+  margin-left: 40rpx;
+}
+
+/* 每日一句横向滚动 */
+.content{
+  color:#666666;
+  background-color: #fff;
+  width:100%;
+  white-space: nowrap;
+  padding:20rpx;
+}
+
+.content .wrapper{
+  width:240rpx;
+  height:400rpx;
+  display: inline-block;
+  margin:20rpx 20rpx 10rpx;
+  border:1rpx solid #CCCCFF;
+  border-radius: 10rpx;
+  /* box-shadow: 6rpx 6rpx 6rpx #ccc; */
+}
+
+.content .wrapper image{
+  width:100%;
+  height:330rpx;
+  border-radius:10rpx 10rpx 0rpx 0rpx; 
+}
+
+.inner{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  text-align: center;
+}
+
+
+/* 四六级 */
+.sixAndFour{
+    border-top:4rpx solid #CCCCFF;
+    border-radius: 20rpx;
+    box-shadow: -2px -1px 4px #ccc,2px -1px 4px #ccc;
+    margin:10rpx auto;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  padding:20rpx 0 0 0;
+}
+
+.title .titleitem{
+  text-align: center;
+  color: #666666;
+  width: 25%;
+  border-bottom:5rpx solid #99CCFF;
+  /* #CCCCFF */
+  padding: 15rpx;
+}
+
+.sixAndFourItem{
+  margin: 20rpx 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 500rpx;
+}
+
+.sixAndFourItem .item{
+  text-align: center;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width:40%;
+  height: 280rpx;
+  box-shadow: 6rpx 6rpx 6rpx #ccc;
+  border-radius: 30rpx;
+}
+
+.sixAndFourItem .item image{
+  width:100%;
+  height:200rpx;
+  border-radius:30rpx 30rpx 0rpx 0rpx;
+}

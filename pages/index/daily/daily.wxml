@@ -1,0 +1,30 @@
+<!--pages/index/daily/daily.wxml-->
+<view class='daily'>
+  <!-- navbar -->
+  <view class='navbar'>
+    <view class='inner'>
+        <view class='{{itemstyle1}}' bindtap='changestyle' data-index = "a">每日美文</view>
+        <!-- <view class='{{itemstyle2}}' bindtap='changestyle' data-index = "b">翻译</view> -->
+    </view>
+  </view>
+
+<!-- 内容 -->
+<view class='content'>
+<!-- title -->
+  <view class='title'>
+   <image src="/images/icons/write1.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+    {{title}}
+  </view>
+<!-- content -->
+  <view class='questions'>
+    <view>{{questions}}</view>
+    <image src='{{article}}' hidden='{{trueorfalse}}'></image>
+    <view class='thebtns'>
+      <view class='items' bindtap="checkanswer">{{btnanswer}}</view>
+      <view class='items' bindtap="thenextqustion">下一题</view>
+    </view>
+  </view>
+</view>
+
+
+</view> 

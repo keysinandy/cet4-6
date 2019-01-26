@@ -1,0 +1,96 @@
+<i-panel title="" i-class="ce">
+    <view class='greetingc' style='font-size:18px'>注册</view>
+</i-panel>
+<form  bindsubmit="formSubmit">
+<van-cell-group>
+  <van-field
+    value="{{ name }}"
+    id='1'
+    required
+    clearable
+    name='name'
+    label="名字"
+    icon="question-o"
+    placeholder="请输入姓名"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[0]}}"
+    bind:click-icon="onClickIcon"
+  />
+    <van-field
+    value="{{ school }}"
+    id='2'
+    required
+    clearable
+    name='school'
+    label="学校"
+    icon="question-o"
+    placeholder="请选择院校"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[1]}}"
+    bind:click-icon="onClickIcon"
+  />
+      <van-field
+    value="{{ school_num }}"
+    id='3'
+    required
+    clearable
+    type='number'
+    name='school_num'
+    label="学号"
+    icon="question-o"
+    placeholder="请输入学号"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[2]}}"
+    bind:click-icon="onClickIcon"
+  />
+    <van-field
+    value="{{ school_time }}"
+    id='4'
+    required
+    clearable
+    type='number'
+    name='school_time'
+    label="入学时间"
+    icon="question-o"
+    placeholder="请选择"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[3]}}"
+    bind:click-icon="onClickIcon"
+  />
+    <van-field
+    value="{{ sex }}"
+    id='5'
+    required
+    clearable
+    name='sex'
+    label="性别"
+    icon="question-o"
+    placeholder="请选择您的性别"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[4]}}"
+    bind:click-icon="onClickIcon"
+  />
+  <!-- <van-picker columns="{{ columns }}" bind:change="onChange" /> -->
+    <van-field
+    value="{{ phone_num }}"
+    id='6'
+    required
+    clearable
+    type='number'
+    name='phone_num'
+    label="联系方式"
+    icon="question-o"
+    placeholder="请输入联系方式"
+    use-icon-slot='true'
+    bind:change='onChange'
+    error-message="{{error[5]}}"
+    bind:click-icon="onClickIcon"
+  />
+</van-cell-group>
+<button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain form-type='submit'>Submit</button>
+</form>

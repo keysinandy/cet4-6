@@ -1,0 +1,60 @@
+@import "/utils/index.wxss";
+page{
+  background-color: #f2f2f2
+}
+.userinfo {
+  position: relative;
+  width: 100%;
+  height: 421rpx;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://sanleisen.cn:443/photo/CET/myBG.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-items: center;
+}
+
+.userAvatar {
+  overflow: hidden;
+  display: flex;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-top: 80rpx;
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2);
+}
+
+.userText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  align-items: center;
+}
+
+.userNickname {
+  color: #fff;
+  font-size: 35rpx;
+}
+
+.listInfo {
+  font-size: 35rpx;
+  margin-top: 22rpx;
+}
+
+.list {
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  border-color: #f6f6f6;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 40rpx 0rpx 40rpx;
+}
+
+.listImg {
+  height: 60rpx;
+  width: 60rpx;
+  margin: 25rpx 50rpx 0rpx 0rpx;
+}
+

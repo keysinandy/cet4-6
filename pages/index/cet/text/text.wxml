@@ -1,0 +1,65 @@
+<!--pages/levelf/dailytext/dailytext.wxml-->
+<view class='page'>
+
+<swiper class="index-banner" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+    <swiper-item wx:for="{{swiper.imgUrls}}" wx:key="*this">
+      <image src="{{item}}" class="slide-image" width="100%" height="300rpx"/>
+    </swiper-item>
+</swiper>
+<view class='page_cen'>
+<view class='padding'></view>
+    <view class="page__hd">
+        <view class="weui-grids">
+            <block wx:for="{{grids}}" wx:key="*this">
+              <navigator url="{{naUrl[item]}}" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="{{i_url[item]}}" />
+                    <view class="greetingc">{{i_name[item]}}</view>
+                </navigator>
+            </block>
+        </view>
+  </view>
+<view class='padding'></view>
+</view>
+
+  <view class='page_cen'>
+    <view class='biao'>
+      <van-panel title="顺序练习" desc="总进度" status="{{sort}}">
+        
+      </van-panel>
+      <van-progress
+      percentage="{{pro_percent}}"
+      pivot-text="{{pro_percent}}%"
+      pivot-color="#7232dd"
+      color="linear-gradient(to right, #be99ff, #7232dd)"
+      />
+    </view>
+    <view class='padding'></view>
+  </view>
+
+
+
+
+
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                        <van-icon name="ellipsis" />
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                                <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">{{page.name}}</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,114 @@
+/* pages/my/rank/rank.wxss */
+
+/* navbar */
+.daily .navbar{
+  background: #87a9eb;
+  width: 100%;
+  height:100rpx;
+  color: #ffffff;
+
+}
+
+.daily .inner{
+  width: 60%;
+   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:  0 auto;
+}
+
+.daily .item{
+  width: 35%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border:4rpx solid #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  text-align: center;
+}
+
+.active{
+  background: #fff;
+  color:#87a9eb;
+   border:4rpx solid #87a9eb;
+}
+
+
+/*内容*/
+.content{
+  margin: 20rpx;
+  font-size: 27rpx;
+}
+
+
+.content .title{
+  font-size: 32rpx;
+  margin: 0 auto;
+  width:300rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  color:#0099CC;
+  border-bottom:5rpx solid #87a9eb;
+}
+
+
+/* 排行榜的具体内容 */
+
+/* 防止溢出 */
+.theusername{
+    width: 200rpx;
+    height:60rpx;
+  	white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+
+/* 前三 */
+.champions{
+ height:85rpx;
+  width:85rpx;
+  position: absolute;
+  left:36rpx;
+}
+
+.championImage{
+  width:85rpx;
+  height:85rpx;
+}
+
+/* 前三整体高度  */
+ .weui-three{
+   height:100rpx;
+ }
+ 
+
+ /* 从第四名开始 */
+ .weui-rest{
+    height:60rpx;
+ }
+ 
+
+ .num{
+  height:50rpx;
+  width:50rpx;
+  position: absolute;
+  left:59rpx;
+  top:70rpx;
+}
+
+
+.sun{
+  height:50rpx;
+  width:55rpx;
+}
+
+
+.number{
+  font-size:30rpx;
+  color:#fff;
+  position: absolute;
+  top:9rpx;
+  right:11rpx;
+}

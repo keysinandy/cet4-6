@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index/index",
+    "pages/register/register",
+    "pages/index/cet/text/text",
+    "pages/index/cet/readmind/readmind",
+    "pages/index/cet/translate/translate",
+    "pages/index/daily/more",
+    "pages/index/daily/daily",
+    "pages/my/myInfo/myInfo",
+    "pages/my/myInfo/change",
+    "pages/introduce/introduce",
+    "pages/my/my/my",
+    "pages/index/cet/cloze/cloze",
+    "pages/my/help/help",
+    "pages/index/cet/match/match",
+    "pages/index/find/find",
+    "pages/my/rank/rank",
+    "pages/my/sign/sign",
+    "pages/register/userLogin"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "四六级小助手",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#87a9eb"
+  },
+  "tabBar": {
+    "selectedColor": "#090",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "主页面",
+        "iconPath": "images/tab_course1.png",
+        "selectedIconPath": "images/tab_course2.png"
+      },
+      {
+        "pagePath": "pages/index/find/find",
+        "text": "发现",
+        "iconPath": "images/find1.png",
+        "selectedIconPath": "images/find2.png"
+      },
+      {
+        "pagePath": "pages/my/my/my",
+        "text": "我的",
+        "iconPath": "images/tab_account1.png",
+        "selectedIconPath": "images/tab_account2.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-tag": "/dist/tag/index",
+    "van-popup": "/dist/popup/index",
+    "i-progress": "/compenent/dist/progress/index",
+    "i-button": "/compenent/dist/button/index",
+    "i-message": "/compenent/dist/message/index",
+    "van-icon": "/dist/icon/index",
+    "van-progress": "/dist/progress/index",
+    "i-panel": "/compenent/dist/panel/index",
+    "van-panel": "/dist/panel/index",
+    "van-field": "/dist/field/index",
+    "van-picker": "/dist/picker/index",
+    "van-action-sheet": "/dist/action-sheet/index",
+    "van-button": "/dist/button/index",
+    "i-action-sheet": "/compenent/dist/action-sheet/index"
+  }
+}

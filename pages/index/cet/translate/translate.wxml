@@ -1,0 +1,20 @@
+<!--pages/index/cet/translate/translate.wxml-->
+<i-panel title="">
+    <view style="padding: 15px;">
+    <van-tag type="primary" round plain='true' size='medium'>翻译</van-tag>
+    </view>
+</i-panel>
+<view class='padding'></view>
+<i-panel title="">
+    <view style="padding: 15px;" >
+        北京是座有三千年历史的古城。早在公元前十一世纪，北京就是燕国的国都，因此北京有燕京之称。在以后的几千年里，北京又成为金、元、明、清各朝的国都。北京是中国的六大古都之一，其他五个是西安、南京、洛阳、开封和杭州。北京是座既古老又年轻的城市，有许多名胜古迹。从故宫、天坛到颐和园，你们可以看到北京保留了许多昔日的风采。
+    </view>
+</i-panel>
+<view class='padding'></view>
+<text class='greeting'>本题暂不支持作答，请提交后核对答案并查看解析</text>
+
+ <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
+  <van-tabbar-item icon="orders-o">答题卡</van-tabbar-item>
+  <van-tabbar-item icon="clock-o">time</van-tabbar-item>
+</van-tabbar>

@@ -1,0 +1,46 @@
+
+page {
+  background-color: #f6f6f6;
+}
+.help{
+  font-size: 30rpx;
+  padding: 30rpx 40rpx 140rpx 40rpx;
+  color:#aaa;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+.input {
+  height: 200rpx;
+  width: 550rpx;
+  margin: 10rpx 30rpx 50rpx 30rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+  box-shadow: 0 0 20rpx #aaaaaa;
+  border-radius: 12rpx;
+  text-align: left;
+}
+.subBtn {
+  margin-top: 15rpx;
+  border-radius: 60rpx;
+  font-size: 33rpx;
+  width: 550rpx;
+  height: 80rpx;
+}
+.btn{
+  margin-top: 20rpx;
+  margin-bottom: 140rpx;
+  border-radius: 60rpx;
+  font-size: 33rpx;
+  width: 550rpx;
+  height: 80rpx;
+  color: #fff;
+}
+.foot {
+  z-index: -98;
+  position: fixed;
+  bottom: 20rpx;
+  color: #d8d8d8;
+  font-size: 19rpx;
+  background-color: f6f6f6;
+  width: 100%;
+  text-align: center;
+}

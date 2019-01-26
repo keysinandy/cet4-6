@@ -1,0 +1,130 @@
+page {
+  background-color: #f2f2f2;
+}
+
+.userinfo {
+  position: relative;
+  width: 100%;
+  height: 421rpx;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://sanleisen.cn:443/photo/CET/signBG.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-items: center;
+}
+
+.userAvatar {
+  overflow: hidden;
+  display: flex;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-top: 80rpx;
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2);
+}
+
+.userText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  align-items: center;
+}
+
+.userNickname {
+  color: #fff;
+  font-size: 35rpx;
+}
+
+.signBar {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.textArea {
+  flex: 2;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.btnArea {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sign {
+  width: 200rpx;
+  color: #fff;
+  font-size: 31rpx;
+  background-color: #f46;
+  border: 1rpx solid #f46;
+  box-shadow: 0 10rpx 15rpx #f8a;
+  border-radius: 50rpx;
+}
+
+.body {
+  margin-bottom: 30rpx;
+  background-color:#fff;
+}
+
+.list {
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  border-color: #f6f6f6;
+  height: 100rpx;
+  font-size: 35rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 40rpx 0rpx 40rpx;
+}
+
+.listTitle {
+  border-width: 0rpx 0rpx 3rpx 0rpx;
+  border-style: solid;
+  border-color: #f6f6f6;
+  padding-left: 30rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#listImg {
+  flex: 1;
+  height: 60rpx;
+  width: 60rpx;
+  margin: 25rpx 50rpx 0rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#listInfo {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#exp {
+  flex: 3;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#num {
+  flex: 2;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+

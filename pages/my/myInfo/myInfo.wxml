@@ -1,0 +1,19 @@
+<!--pages/my/myinfo.wxml-->
+<view style='height:20rpx'></view>
+<view style="background-color:{{bottonClr[0]}}">
+  <botton class='list' style='height: 160rpx' id="0" bindtouchstart="CA" bindtouchend="CB" bindtap="tap">
+    <view class='listInfo'>头像</view>
+    <view class='listCont'>
+      <open-data class="avatar" type="userAvatarUrl" ></open-data>
+    </view>
+    <view class='listIcon'>＞</view>
+  </botton>
+</view>
+
+<view wx:for='{{info}}' wx:for-item="i" wx:key="name" style="background-color:{{bottonClr[i.id]}}; margin-bottom:{{i.margin}}rpx">
+  <botton class='list' id="{{i.id}}" bindtouchstart="CA" bindtouchend="CB" bindtap="tap">
+    <view class='listInfo'>{{i.name}}</view>
+    <view class='listCont'>{{i.info}}</view>
+    <view class='listIcon'>＞</view>
+  </botton>
+</view>

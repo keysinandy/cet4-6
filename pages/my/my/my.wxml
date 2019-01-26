@@ -1,0 +1,15 @@
+<view class="userinfo" id='0' bindlongtap="tap">
+  <open-data class="userAvatar" type="userAvatarUrl" style='opacity: {{opacity}}'></open-data>
+  <view class='userText' style='opacity: {{opacity}}'>
+    <open-data class='userNickname' type="userNickName"></open-data>
+    <!--<text class='userLabel'>点击头像更改个人信息</text>-->
+  </view>
+</view>
+
+  <view wx:for='{{setArr}}' wx:for-item="i" wx:key="name" style="background-color:{{bottonClr[i.id]}};margin-bottom:{{i.margin}}rpx">
+    <botton class='list' id="{{i.id}}"  bindtouchstart="CA" bindtouchend="CB" bindtap="tap">
+      <image class='listImg' mode="aspectFit" src="{{sUrl}}{{i.img}}.png"></image> 
+      <view class='listInfo'>{{i.name}}</view>
+    </botton>
+  </view>
+

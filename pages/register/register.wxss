@@ -1,0 +1,18 @@
+.subBtn {
+  margin-top: 20rpx;
+  border-radius: 60rpx;
+  font-size: 33rpx;
+  width: 490rpx;
+  height: 80rpx;
+}
+.subBtn:hover{
+  margin-top: 20rpx;
+  border-radius: 60rpx;
+  font-size: 33rpx;
+  width: 490rpx;
+  height: 80rpx;
+  background-color: rgb(243, 240, 240)
+}
+.ce{
+  align-content: center
+}

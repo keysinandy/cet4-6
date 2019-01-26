@@ -1,0 +1,14 @@
+<!--pages/introduce/introduce.wxml-->
+<view class='container'>
+
+
+  <text>姓名：邵安楠  ---  四六级冲刺小助手</text>
+  <text>
+  小程序的主要功能：
+  现在就是注册信息
+  其他功能正在进一步完善~
+  
+  
+  </text>
+
+</view>

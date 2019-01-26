@@ -1,0 +1,64 @@
+<view class='maintitle'>
+  <view>
+    <image src="https://sanleisen.cn/photo/CET/icons/rili.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+     <text style='font-size:28rpx;'>每日美文</text>
+  </view>
+ 
+  <view style='font-size:28rpx;' class='more' bindtap='more'>查看全部<text class='arrow'>></text></view>
+</view>
+
+
+<!-- 滚动 -->
+<view class='content'>
+  <scroll-view scroll-x class='scroll'>
+    <block wx:for="{{count}}" wx:key="{{item}}">
+      <view class='wrapper' bindtap='goToDaily' data-index="{{index}}">
+        <view class='inner'>
+          <view>
+            <image src='/images/daily/1.jpg'></image>
+          </view>
+          <view><image src="https://sanleisen.cn/photo/CET/icons/sun1.png" style="margin-right: 15rpx;vertical-align: middle;width:50rpx; height: 50rpx;"></image>day{{index+1}}</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+
+
+
+
+<view class='sixAndFour'>
+  <!-- 四六级title -->
+  <view class='title'>
+    <view class='titleitem'>
+      <image src="https://sanleisen.cn/photo/CET/icons/AB.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+      <text>CET4</text>
+    </view>
+
+    <view class='titleitem'>
+      <image src="https://sanleisen.cn/photo/CET/icons/En.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+      <text>CET6</text>
+    </view>
+  </view>
+
+
+  <view class='sixAndFourItem'>
+    <!-- 四级 -->
+    <view class='item' bindtap="goToCetFour">
+      <view>
+        <image src='/images/yingwen1.jpg'></image>
+      </view>
+      <view class='text'>四级</view>
+    </view>
+
+
+    <!-- 六级 -->
+    <view class='item' bindtap="goToCetSix">
+      <view>
+        <image src='/images/yingwen3.jpg'></image>
+      </view>
+      <view class='text'>六级</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<view class="userinfo" id='0' bindlongtap="tap">
+  <open-data class="userAvatar" type="userAvatarUrl" style='opacity: {{opacity}}'></open-data>
+  <view class='userText'>
+    <open-data class='userNickname' type="userNickName"></open-data>
+  </view>
+</view>
+<view class='signBar'>
+  <view class='textArea'>
+    <view id='num'>0</view>
+    <view id='word'>连续签到</view>
+  </view>
+  <view class='btnArea'>
+    <button class='sign'>签到</button>
+  </view>
+  <view class='textArea'>
+    <view id='num'>0</view>
+    <view id='word'>累计签到</view>
+  </view>
+</view>
+
+<view wx:for='{{task}}' wx:key='name' class='body' >
+  <botton class='listTitle' >{{item.name}}</botton>
+    <view wx:for='{{item.detail}}' wx:for-item="i" wx:key="name" style="background-color:{{bottonClr[i.id]}};margin-bottom:{{i.margin}}rpx">
+      <botton class='list' id="{{i.id}}" bindtouchstart="CA" bindtouchend="CB" bindtap="tap">
+        <image id='listImg' mode="aspectFit" src="{{sUrl}}{{i.img}}.png"></image>
+        <view id='listInfo'>{{i.name}}</view>
+        <view id='exp'>{{i.exp}}经验</view>
+        <view id='num'>{{i.n1}}/{{i.n2}}</view>
+      </botton>
+    </view>
+</view>

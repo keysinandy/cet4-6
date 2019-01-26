@@ -1,0 +1,12 @@
+<view class='help'>
+  <text>提交反馈信息</text>
+  <form bindsubmit="ok" report-submit>
+    <textarea class='input' bindinput='input' placeholder-style="color:#999" placeholder="请在这里写反馈信息" />
+    <button class='btn' form-type="submit">提交</button>
+  </form>
+  <text>您也可以直接</text>
+  <button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain open-type="contact">咨询小程序客服</button>
+</view>
+
+<view class='foot'>Copyright © 2019 冲鸭四六级</view>
+<view style='height:100rpx;z-index:-99'></view>

@@ -1,0 +1,10 @@
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindchange='valueChange' placeholder="{{placeholder}}" value='{{value}}' auto-focus='true'/>
+</view>
+    <view class="weui-cell__ft">
+      <view class="weui-vcode-btn"  bindtap='submit'>保存</view>
+    </view>
+  </view>
+</view>
