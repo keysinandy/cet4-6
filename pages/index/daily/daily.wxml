@@ -12,7 +12,7 @@
 <view class='content'>
 <!-- title -->
   <view class='title'>
-   <image src="/images/icons/write1.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+   <image src="https://sanleisen.cn/photo/CET/icons/write1.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
     {{title}}
   </view>
 <!-- content -->

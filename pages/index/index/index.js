@@ -96,11 +96,29 @@ Page({
   goToCetFour: function () {
     wx.navigateTo({
       url: '../cet/text/text?cet=4',
+      success(e){
+        wx.showLoading({
+          title: '加载中',
+        })
+
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 2000)
+      }
     })
   },
   goToCetSix: function () {
     wx.navigateTo({
       url: '../cet/text/text?cet=6',
+      success(e) {
+        wx.showLoading({
+          title: '加载中',
+        })
+
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 2000)
+      }
     })
   },
   // 跳转每日一句

@@ -9,7 +9,7 @@ Page({
       grids: [0, 1, 2],
       i_name: ['每日一练', '真题模考', '高频练习'],
       i_url: ['/images/1.png', '/images/2.png', '/images/3.png'],
-      naUrl: ['','../trueexam/trueexam','../flextext/flextext'],
+      naUrl: ['../dailytest/dailytest','../trueexam/trueexam','../flextext/flextext'],
       swiper: {
         imgUrls: [
           'https://sanleisen.cn/photo/000.jpg',

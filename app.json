@@ -21,7 +21,8 @@
     "pages/register/userLogin",
     "pages/index/cet/flextext/flextext",
     "pages/index/cet/trueexamcard/trueexamcard",
-    "pages/index/cet/writing/writing"
+    "pages/index/cet/writing/writing",
+    "pages/index/cet/dailytest/dailytest"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -73,6 +74,7 @@
     "i-cell": "/compenent/dist/cell/index",
     "i-cell-group": "/compenent/dist/cell-group/index",
     "van-cell": "/dist/cell/index",
-    "van-cell-group": "/dist/cell-group/index"
+    "van-cell-group": "/dist/cell-group/index",
+    "van-loading": "/dist/loading/index"
   }
 }
