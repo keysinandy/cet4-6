@@ -16,28 +16,29 @@ Page({
         id: 'read',
         name: 'Readminding',
         open: false,
-        pages: [{ 'name': '2014.1', 'url': '../readmind/readmind' }, { 'name': '2014.2', 'url': '../readmind/readmind' }, { 'name': '2014.3', 'url': '../readmind/readmind' }, { 'name': '2014.4', 'url': '../readmind/readmind' }, { 'name': '2014.5', 'url': '../readmind/readmind' }]
+        pages: [{ 'name': '2014.1', 'url': '../readmind/readmind', 'is_done': 0 }, { 'name': '2014.2', 'url': '../readmind/readmind', 'is_done': 0 }, { 'name': '2014.3', 'url': '../readmind/readmind', 'is_done': 0}, { 'name': '2014.4', 'url': '../readmind/readmind', 'is_done': 0 }, { 'name': '2014.5', 'url': '../readmind/readmind', 'is_done': 0 }]
       },
       {
         id: 'cloze',
         name: 'Clozing',
         open: false,
-        pages: [{ 'name': '2016.1', 'url': '../cloze/cloze' }, { 'name': '2016.2', 'url': '../cloze/cloze' }, { 'name': '2016.3', 'url': '../cloze/cloze' }, { 'name': '2016.4', 'url': '../cloze/cloze' }, { 'name': '2016.5', 'url': '../cloze/cloze' }]
+        pages: [{ 'name': '2016.1', 'url': '../cloze/cloze', 'is_done': 0 }, { 'name': '2016.2', 'url': '../cloze/cloze', 'is_done': 0 }, { 'name': '2016.3', 'url': '../cloze/cloze', 'is_done': 0 }, { 'name': '2016.4', 'url': '../cloze/cloze', 'is_done': 0 }, { 'name': '2016.5', 'url': '../cloze/cloze', 'is_done': 0}]
       },
       {
         id: 'match',
         name: 'Matching',
         open: false,
-        pages: [{ 'name': '2015.1', 'url': '../match/match' }, { 'name': '2015.2', 'url': '../match/match' }, { 'name': '2015.3', 'url': '../match/match' }, { 'name': '2015.4', 'url': '../match/match' }, { 'name': '2015.5', 'url': '../match/match' }]
+        pages: [{ 'name': '2015.1', 'url': '../match/match', 'is_done': 0 }, { 'name': '2015.2', 'url': '../match/match', 'is_done': 0 }, { 'name': '2015.3', 'url': '../match/match', 'is_done': 0 }, { 'name': '2015.4', 'url': '../match/match', 'is_done': 0 }, { 'name': '2015.5', 'url': '../match/match', 'is_done': 0 }]
       },
       {
         id: 'trans',
         name: 'Translation',
         open: false,
-        pages: [{ 'name': '2014.1', 'url': '../translate/translate' }, { 'name': '2014.2', 'url': '../translate/translate' }, { 'name': '2014.3', 'url': '../translate/translate' }, { 'name': '2014.4', 'url': '../translate/translate' }, { 'name': '2014.5', 'url': '../translate/translate' }]
+        pages: [{ 'name': '2014.1', 'url': '../translate/translate', 'is_done': 0 }, { 'name': '2014.2', 'url': '../translate/translate', 'is_done': 0 }, { 'name': '2014.3', 'url': '../translate/translate', 'is_done': 0 }, { 'name': '2014.4', 'url': '../translate/translate', 'is_done': 0 }, { 'name': '2014.5', 'url': '../translate/translate', 'is_done': 0}]
       }
     ],
-    title:"2018秋季六级考试"
+    title:"2018秋季六级考试",
+    active:0,
   },
 
   /**
@@ -59,26 +60,8 @@ Page({
   onLoad: function (options) {
 
   },
-  onChange(e) {
-    console.log(e.detail);
-    let cid = e.detail;
-    switch (cid) {
-      case 0:
-        wx.showModal({
-          title: '提示',
-          content: '收藏吗'
-        })
-        break;
-      case 1:
-        wx.showModal({
-          title: '提示',
-          content: '还在做',
-        })
-        break;
-      case 2:
-
-        break;
-    }
-  },
+  submit(e) {
+    console.log(e)
+  }
 
 })

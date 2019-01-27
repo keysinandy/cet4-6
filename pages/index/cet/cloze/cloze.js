@@ -58,12 +58,8 @@ Page({
         "C.Human intelligence tends to grow with age.",
         "D.Philosophical thinking improves instruction.",
       ],
-
-
-
-
-
     ],
+    active: 0,
 
   },
 

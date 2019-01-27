@@ -92,3 +92,14 @@
 .page_cen {
   background-color: #fff
 }
+button::after{
+  border: none;
+}
+.line{
+  width: 92%;
+  padding-left: 15px;
+  padding-right:15px;
+}
+.show_done{
+  
+}
