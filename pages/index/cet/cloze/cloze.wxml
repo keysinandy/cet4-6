@@ -1,6 +1,6 @@
 <view class='padding'>
 
-<van-tag type="primary" size = 'medium' plain='true' round>选词填空:</van-tag>
+<van-tag type="primary" size = 'medium' plain='true' round>cloze</van-tag>
       <view class='greeting'>
       </view>
 

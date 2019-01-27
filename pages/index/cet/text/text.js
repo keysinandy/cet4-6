@@ -9,7 +9,7 @@ Page({
       grids: [0, 1, 2],
       i_name: ['每日一练', '真题模考', '高频练习'],
       i_url: ['/images/1.png', '/images/2.png', '/images/3.png'],
-      naUrl: [],
+      naUrl: ['','../trueexam/trueexam','../flextext/flextext'],
       swiper: {
         imgUrls: [
           'https://sanleisen.cn/photo/000.jpg',
@@ -27,7 +27,7 @@ Page({
           id: 'write',
           name: 'Writing',
           open: false,
-          pages: [{ 'name': '2014.1', 'url': '../readmind/readmind' }, { 'name': '2014.2', 'url': '../readmind/readmind' }, { 'name': '2014.3', 'url': '../readmind/readmind' }, { 'name': '2014.4', 'url': '../readmind/readmind' }, { 'name': '2014.5', 'url': '../readmind/readmind' }]
+          pages: [{ 'name': '2014.1', 'url': '../writing/writing' }, { 'name': '2014.2', 'url': '../writing/writing' }, { 'name': '2014.3', 'url': '../writing/writing' }, { 'name': '2014.4', 'url': '../writing/writing' }, { 'name': '2014.5', 'url': '../writing/writing' }]
         },
         {
           id: 'read',

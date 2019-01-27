@@ -1,5 +1,5 @@
 <view class='padding'>
-<van-tag type="primary" size = 'medium' plain='true' round>文段匹配:</van-tag>
+<van-tag type="primary" size = 'medium' plain='true' round>matching</van-tag>
       <view class='greeting'>
       </view>
 

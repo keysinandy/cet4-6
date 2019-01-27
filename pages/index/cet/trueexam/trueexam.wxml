@@ -1,0 +1,14 @@
+<!--pages/index/cet/trueexam/trueexam.wxml-->
+<block wx:for="{{paper}}" wx:for-item="item" wx:key ="*this">
+<navigator url='{{item.url}}'>
+  <van-cell
+    value=""
+    is-link
+  >
+    <view slot="title" class='ic_name'>
+    <van-icon name="fire" color='red' custom-style='margin-right:10px'/>
+      <view class="van-cell-text">{{item.name}}</view>
+    </view>
+  </van-cell>
+  </navigator>
+</block>

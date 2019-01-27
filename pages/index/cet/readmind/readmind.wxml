@@ -1,6 +1,6 @@
 <view class='padding'>
 
-<van-tag type="primary" size = 'medium' plain='true' round>仔细阅读:</van-tag>
+<van-tag type="primary" size = 'medium' plain='true' round>readmind</van-tag>
       <view class='greeting'>
       </view>
 

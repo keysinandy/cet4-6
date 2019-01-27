@@ -7,6 +7,14 @@ var courseId = ''
 App({
   onLaunch: function() {
     // 展示本地存储能力
+    wx.showLoading({
+      title: '加载中',
+      mask:'true'
+    })
+
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now()) 
     wx.setStorageSync('logs', logs)
@@ -25,17 +33,6 @@ App({
             console.log("成功返回了")
             wx.setStorageSync('session_key',res.data.session_key)
             wx.setStorageSync('openid', res.data.openid)
-            // wx.request({
-            //   url: userUrl + 'getInfo',
-            //   data:{
-            //     'openid' : res.data.openid,
-            //   },
-            //   success: function (res1) {
-            //     console.log('登录请求返回',res1.data.data)
-            //     wx.setStorageSync('userInfo', res1.data.data)          
-            //   },
-            // })
-
             console.log(res)
             if (!res.data.is_register) {
               wx.showModal({

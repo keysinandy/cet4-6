@@ -53,38 +53,6 @@
   width: 94%;
   border-bottom: 1 px solid #ccc;
 }
-
-.tijiao {
-  position: absolute;
-  top :57%;
-  right: 0%;
-  background-color:rgba(198, 206, 248, 0);
-  border: rgba(1, 136, 170, 0.377) solid 2rpx;
-  border-radius: 100rpx;
-  color: black;
-  width: 270rpx;
-  margin: 20rpx 20rpx 0 20rpx;
-  font-size: 38rpx;
-  font-weight: bold;
-  line-height: 70rpx;
-  font-family: "仿宋";
-}
-.tijiao:hover{
-  position: absolute;
-  top :57%;
-  right: 0%;
-  background-color:rgba(6, 46, 250, 0);
-  border: rgba(12, 162, 248, 0.438) solid 2rpx;
-  border-radius: 100rpx;
-  color: gray;
-  width: 270rpx;
-  margin: 20rpx 20rpx 0 20rpx;
-  font-size: 38rpx;
-  font-weight: bold;
-  line-height: 70rpx;
-  font-family: "仿宋"
-}
-
 .question {
   width: 15%;
   display: flex;

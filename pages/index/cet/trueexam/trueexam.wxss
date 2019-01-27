@@ -1,0 +1,6 @@
+/* pages/index/cet/trueexam/trueexam.wxss */
+.ic_name{
+  position: relative;
+  display: flex
+  
+}

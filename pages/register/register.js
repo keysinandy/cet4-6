@@ -67,7 +67,7 @@ Page({
       },
       success(e){
         console.log("注册返回信息：",e)
-        wx.setStorageSync('userinfo', e.data.data[0])
+        wx.setStorageSync('userInfo', e.data.data[0])
         wx.navigateBack({
           delta:111,
         })

@@ -1,9 +1,10 @@
 {
   "pages": [
-        "pages/index/index/index",
+    "pages/index/index/index",
+    "pages/index/cet/trueexam/trueexam",
+    "pages/register/register",
     "pages/my/myInfo/myInfo",
     "pages/my/myInfo/change",
-    "pages/register/register",
     "pages/index/cet/text/text",
     "pages/index/cet/readmind/readmind",
     "pages/index/cet/translate/translate",
@@ -17,7 +18,10 @@
     "pages/index/find/find",
     "pages/my/rank/rank",
     "pages/my/sign/sign",
-    "pages/register/userLogin"
+    "pages/register/userLogin",
+    "pages/index/cet/flextext/flextext",
+    "pages/index/cet/trueexamcard/trueexamcard",
+    "pages/index/cet/writing/writing"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -65,6 +69,10 @@
     "van-action-sheet": "/dist/action-sheet/index",
     "van-button": "/dist/button/index",
     "i-action-sheet": "/compenent/dist/action-sheet/index",
-    "i-input": "/compenent/dist/input/index"
+    "i-input": "/compenent/dist/input/index",
+    "i-cell": "/compenent/dist/cell/index",
+    "i-cell-group": "/compenent/dist/cell-group/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index"
   }
 }
