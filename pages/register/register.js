@@ -76,6 +76,10 @@ Page({
     })
   },
   onGotUserInfo(e){
-      console.log(e)
+    wx.getSetting({
+      success(e){
+        console.log(e)
+      }
+    })
   }
 })
