@@ -74,5 +74,8 @@ Page({
         
       }
     })
+  },
+  onGotUserInfo(e){
+      console.log(e)
   }
 })

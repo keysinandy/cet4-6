@@ -92,7 +92,7 @@
     bind:click-icon="onClickIcon"
   />
 </van-cell-group>
-<button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain form-type='submit'>Submit</button>
+<button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain form-type='submit' open-type='getUserInfo' bindgetuserinfo='onGotUserInfo'>Submit</button>
 </form>
 
 <!-- <van-cell
