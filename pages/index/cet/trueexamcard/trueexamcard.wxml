@@ -1,5 +1,5 @@
 <!--pages/index/cet/trueexamcard/trueexamcard.wxml-->
-<form bindsubmit=''>
+<form bindsubmit='submit'>
 <view class='greetingc'>{{title}}</view>
 <view class="page__bd page__bd_spacing">
         <view class="kind-list">
@@ -23,5 +23,6 @@
             </block>
         </view>
     </view>
+
 <button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain form-type='submit'>Submit</button>
 </form>
