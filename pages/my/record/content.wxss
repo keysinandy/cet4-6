@@ -1,0 +1,49 @@
+/**index.wxss**/
+page{
+  width: 100%;
+}
+.swiper{
+  height: 328rpx;
+}
+.slide-image{
+  width: 750rpx;
+  height: 328rpx;
+}
+.border{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 20rpx;
+  height: 120rpx;
+  border-top: 1rpx #ccc solid;
+}
+.icon{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+  
+}
+.contain{
+  width: 550rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+}
+.subtitle{
+  color: #aaa;
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.foot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+#footLine {
+  border-top: 3rpx solid #ddd;
+  width: 140rpx;
+}

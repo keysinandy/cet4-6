@@ -67,7 +67,7 @@ Page({
         }
       }
     }
-    console.log(this.data.all_nodone)
+    // console.log(this.data.all_nodone)
   },
   submit(e) {
     if (this.data.all_nodone != 0) {
@@ -93,5 +93,8 @@ Page({
         url: '../text/text?have_done=1',
       })
     }
+  },
+  save(e){
+    
   }
 })

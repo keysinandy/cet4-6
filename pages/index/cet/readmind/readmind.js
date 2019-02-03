@@ -4,11 +4,12 @@ var app = getApp();
 const config = require('../../../../config.js');
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    is_save: '收藏',
+    save:'star-o',
     n : 1,
     active: 0,
     show: false,
@@ -21,7 +22,6 @@ Page({
     ],
     tijiaoimg:config.Url+'/cet_images/tj.png',
     grids:[0,1,2,3,4],
-
     textUrl:[
       'What are researchers rediscovering through their studies?',
       "What do we learn about Betty's Brain ?",
@@ -60,52 +60,13 @@ Page({
         "C.Human intelligence tends to grow with age.",
         "D.Philosophical thinking improves instruction.",
       ],
-      
-
-
-     
-
     ],
-    
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
   onChange(e) {
     console.log(e.detail);
     let cid = e.detail;
     switch(cid){
       case 0:
-        wx.showModal({
-          title: '提示',
-          content: '收藏吗'
-        })
         break;
       case 1:
         wx.showModal({
@@ -116,6 +77,21 @@ Page({
       case 2:
 
         break;
+    }
+  },
+
+  save(e){
+    if(this.data.save == 'star-o')
+    {
+      this.setData({
+        save:'star',
+        is_save:'已收藏'
+      })
+    }else{
+      this.setData({
+        save:'star-o',
+        is_save:'收藏'
+      })
     }
   },
 

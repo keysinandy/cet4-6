@@ -1,6 +1,6 @@
 <!--pages/index/cet/trueexam/trueexam.wxml-->
-<block wx:for="{{paper}}" wx:for-item="item" wx:key ="*this">
-<navigator url='{{item.url}}'>
+<block wx:for="{{paper}}" wx:for-item="item" wx:key ="item.id">
+<navigator url='{{item.url}}&cet={{cet}}'>
   <van-cell
     value=""
     is-link
@@ -10,5 +10,5 @@
       <view class="van-cell-text">{{item.name}}</view>
     </view>
   </van-cell>
-  </navigator>
+</navigator>
 </block>

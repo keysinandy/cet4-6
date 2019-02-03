@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    save: 'star-o',
+    is_save: '收藏'
   },
 
   /**
@@ -20,21 +21,31 @@ Page({
     let cid = e.detail;
     switch (cid) {
       case 0:
-        wx.showModal({
-          title: '提示',
-          content: '收藏吗'
-        })
         break;
       case 1:
-        wx.showModal({
-          title: '提示',
-          content: '还在做',
+        wx.navigateTo({
+          url: '../card/card',
         })
         break;
       case 2:
-
         break;
     }
   },
+
+  save(e){
+    // console.log(e)
+    if(this.data.save == 'star-o')
+    {
+      this.setData({
+        save : 'star',
+        is_save : "已收藏"
+      })
+    }else{// todo 发送题目到后台 
+      this.setData({
+        save : 'star-o',
+        is_save : '收藏'
+      })
+    }
+  }
 
 })

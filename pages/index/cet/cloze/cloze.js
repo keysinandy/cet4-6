@@ -9,6 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    save:'star-o',
+    is_save:'收藏',
     n: 1,
     answer: [
       ' ',
@@ -62,35 +64,6 @@ Page({
     active: 0,
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
   roll: function (e) {
     this.setData({
       n: e.detail.current + 1
@@ -130,31 +103,36 @@ Page({
     }
     console.log(this.data.answer[0])
   },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
+  onChange(e){
+    console.log(e.detail);
+    let cid = e.detail;
+    switch (cid) {
+      case 0:
+        break;
+      case 1:
+        wx.showModal({
+          title: '提示',
+          content: '还在做',
+        })
+        break;
+      case 2:
+
+        break;
+    }
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  save(e){
+    if (this.data.save == 'star-o') {
+      this.setData({
+        save: 'star',
+        is_save: '已收藏'
+      })
+    } else {
+      this.setData({
+        save: 'star-o',
+        is_save: '收藏'
+      })
+    }
   }
+  
 })

@@ -1,6 +1,6 @@
 const app = getApp()
 const userUrl = require('../../config.js').userUrl 
-
+var openid = wx.getStorageSync('openid')
 Page({
   data: {
     info: [{
@@ -25,6 +25,7 @@ Page({
     error: [
       '','','','','',''
     ],
+    is_na:0
   },
   onChange(event) {
     // event.detail 为当前输入的值
@@ -53,7 +54,6 @@ Page({
 
   },
   formSubmit(e){
-    var openid = wx.getStorageSync('openid')
     wx.request({
       url: userUrl+'setInfo',
       data:{
@@ -68,18 +68,49 @@ Page({
       success(e){
         console.log("注册返回信息：",e)
         wx.setStorageSync('userInfo', e.data.data[0])
-        wx.navigateBack({
-          delta:111,
-        })
-        
+        setTimeout(function(){
+          wx.navigateBack({
+            delta:111
+          })
+        },5000)
       }
     })
   },
   onGotUserInfo(e){
-    wx.getSetting({
-      success(e){
-        console.log(e)
-      }
-    })
+    var usr = wx.getStorageSync('userInfo')
+    // console.log("userInfo=",usr)
+    if (e.detail.errMsg == "getUserInfo:fail auth deny"){
+      wx.showModal({
+        title: '提示',
+        content: '授权失败可能导致有些功能无法使用哦，记得到我的，信息设置授权哦',
+        success(e){
+          wx.showLoading({
+            title: '请稍后',
+          })
+        }
+      })
+    }else{
+      console.log("用户信息返回：", e.detail.userInfo)
+      wx.request({
+        url: userUrl+'setweixinInfo',
+        data:{
+          'avatarUrl': e.detail.userInfo.avatarUrl,
+          'city': e.detail.userInfo.city,
+          'country': e.detail.userInfo.country,
+          'gender': e.detail.userInfo.gender,
+          'language': e.detail.userInfo.language,
+          'nickName': e.detail.userInfo.nickName,
+          'province': e.detail.userInfo.province,
+          'openid':openid,
+          'name': usr.name
+        },
+        success(e){
+          // console.log(e.data.data)
+        }
+      })
+      wx.showLoading({
+        title: '请稍后',
+      })
+    }
   }
 })

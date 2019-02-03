@@ -35,7 +35,7 @@
     </view>
     </view>
  <van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
+  <van-tabbar-item icon="{{save}}" bindtap='save'>{{is_save}}</van-tabbar-item>
   <van-tabbar-item icon="orders-o">答题卡</van-tabbar-item>
   <van-tabbar-item icon="clock-o">time</van-tabbar-item>
 </van-tabbar>

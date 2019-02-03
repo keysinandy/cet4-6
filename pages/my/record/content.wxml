@@ -1,0 +1,17 @@
+<view style='padding:30rpx;background-color:#fff' wx:if='{{!loading}}'>
+  <view wx:for='{{questions}}' class='border' wx:key='unique' bindtap='tap' id='{{item.id}}' >
+    <image src='' class='icon' />
+    <!-- 此处是专题练习封面 -->
+    <view class='contain'>
+      <view class='title'>来源：{{item.src}}</view>
+      <text class='subtitle'>缩略内容：\n{{item.intro}}</text>
+    </view>
+  </view>
+  <view style='border-bottom: 1rpx #ccc solid'></view>
+</view>
+
+<view class='foot' wx:if='{{!loading}}'>
+  <view id='footLine' />
+  <view style='padding:0 20rpx 0 20rpx'>{{footTitle}}</view>
+  <view id='footLine' />
+</view>

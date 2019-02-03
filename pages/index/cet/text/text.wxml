@@ -42,17 +42,16 @@
 
     <view class="page__bd page__bd_spacing">
         <view class="kind-list">
-            <block wx:for="{{list}}" wx:key="id">
+            <block wx:for="{{list}}"  wx:key="id">
                 <view class="kind-list__item">
                     <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
                         <view class="weui-flex__item">{{item.name}}</view>
-                        <!-- <view class='show_done'>{{item.uhave_done}}/{{item.all}}</view> -->
-                        <i-progress percent="{{item.percent}}" status="active" hide-info='true' stroke-width='3' i-class='line'></i-progress>
+                        <i-progress percent="{{item.all_percent}}" status="active" hide-info='true' stroke-width='3' i-class='line'></i-progress>
                         <van-icon name="ellipsis" />
                     </view>
                     <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
                         <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
-                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="name">
+                            <block wx:for="{{item.page}}" wx:for-item="page" wx:key="name">
                                 <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
                                     <view class="weui-cell__bd">{{page.name}}</view>
                                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>

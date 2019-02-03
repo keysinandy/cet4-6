@@ -6,6 +6,8 @@ Page({
    */
   data: {
     active:0,
+    is_save:'收藏',
+    save:"star-o"
   },
 
   /**
@@ -20,10 +22,6 @@ Page({
     let cid = e.detail;
     switch (cid) {
       case 0:
-        wx.showModal({
-          title: '提示',
-          content: '收藏吗'
-        })
         break;
       case 1:
         wx.showModal({
@@ -36,5 +34,20 @@ Page({
         break;
     }
   },
+
+  save(e){
+    if(this.data.save == 'star-o')
+    {
+      this.setData({
+        save: 'star',
+        is_save: '已收藏'
+      })
+    }else{
+      this.setData({
+        save : 'star-o',
+        is_save: '收藏'
+      })
+    }
+  }
 
 })

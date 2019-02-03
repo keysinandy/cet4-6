@@ -21,7 +21,9 @@
     "pages/index/cet/flextext/flextext",
     "pages/index/cet/trueexamcard/trueexamcard",
     "pages/index/cet/writing/writing",
-    "pages/index/cet/dailytest/dailytest"
+    "pages/index/cet/card/card",
+    "pages/my/record/record",
+    "pages/my/record/content"
   ],
   "window": {
     "backgroundTextStyle": "light",

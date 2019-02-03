@@ -11,7 +11,6 @@ App({
       title: '加载中',
       mask:'true'
     })
-
     setTimeout(function () {
       wx.hideLoading()
     }, 2000)
@@ -22,6 +21,7 @@ App({
     wx.login({
       success: res => {
         wx.request({
+          // method:'post',
           url: wxUrl +'code_openid',
           data: {
             'code': res.code,
