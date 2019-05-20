@@ -1,4 +1,8 @@
 {
-
-  "navigationBarTitleText": "记录"
+  "navigationBarTitleText": "学习记录",
+  "usingComponents": {
+    "van-tag": "../../../dist/tag/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-tabs": "../../../dist/tabs/index"
+  }
 }

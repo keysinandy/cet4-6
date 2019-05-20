@@ -1,0 +1,10 @@
+<template name="collectcontent">
+        <view class='leftbox' data-id = "{{item.type_id}}" bindtap='tap' id='{{index}}'>
+          <view class='source1'><van-tag type="primary" size="medium">来源</van-tag><text class="sourcedetail">{{item.src}}</text></view>
+          <view class='source2'>卷宗：{{item.intro}}</view>
+        </view>
+
+        <view class='rightbox' data-id = "{{item.type_id}}" bindtap='tap' id='{{index}}'>
+          <van-tag round color="{{item.color}}" size="large" plain class="label">{{item.have_done}}</van-tag>
+        </view>
+</template>

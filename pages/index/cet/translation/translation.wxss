@@ -1,0 +1,7 @@
+/* pages/index/cet/translate/translate.wxss */
+.taitou {
+  position: absolute;
+  background-color: rgba(69, 69, 233, 0.432) ;
+  border-radius:15%； 
+  
+} 

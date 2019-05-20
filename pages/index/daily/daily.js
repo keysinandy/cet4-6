@@ -1,77 +1,80 @@
 // pages/index/daily/daily.js
 // const isempty =  require('../../../..//utils/isempty.js');
+
+const Url = require('../../../config.js').Url
 Page({
   data: {
-    // undefined防止页面渲染图片路径时报错
-    // theindex: undefined,
-    // today: {}
-    itemstyle1: "item active",
-    itemstyle2:"item",
-    questions:"1随着科技的进步，现在看电影的方式不一，既可以在家看DVD、网络电影，也可以选择在电影院观看电影。对此，你的看法呢？",
-    article: "/images/articles/1.png",
-    title:"美文题干",
-    trueorfalse:true,
-    btnanswer:"查看优选答案"
+    topic_title: '',
+    content: "",
+    foot: "",
+    translation: "",
+    important_words: [
+    ],
+    id: 0,
+    time: '',
   },
-  onLoad: function (options) {
-    // 拿到参数
-    // 请求后台数据
-    // wx.request({
-    //   url: '',
-    // })
+  onLoad: function (e) {
+    this.data.id = e.id
+    this.data.time = e.time
+    const openid = wx.getStorageSync('openid')
+    var that = this
+    wx.request({
+      url: Url + '/meiwen/get_meiweninfo',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        id: this.data.id
+      },
+      success(e) {
+        // console.log(e.data.data)
+        // console.log(e.data.data[0]['key_words'])
+        if(e.data.status ==200){
+          var word = e.data.data[0]['key_words']
+          word = word.split('\n')
+          console.log(word[0].split(' ').slice(1,).join(' ')) // split()字符串转换成数组,slice(取一部分数组),join(将数组转换回字符串)
+          for(let j = 0,i = 0;i<word.length - 1;i++,j++){
+            // console.log(word_obj)
+            let word_obj = {}
+            word_obj.words = word[i].split(' ')[0]
+            word_obj.describe = word[i].split(' ').slice(1,).join(' ')
+            // console.log(word_obj.describe)
+            that.data.important_words[j] = word_obj
+          }
+          that.data.topic_title = e.data.data[0].title
+          that.data.content = e.data.data[0].english_contents
+          that.data.translation = e.data.data[0].chinese_contents
+          if (e.data.data[0].foot != null){
+            that.data.foot = e.data.data[0].foot
+          }
+          that.setData({
+            topic_title: that.data.topic_title,
+            time: that.data.time,
+            content: that.data.content,
+            translation: that.data.translation,
+            foot: that.data.foot,
+            important_words: that.data.important_words
+          })
+        }else{
+          wx.showToast({
+            title: '网络开小差了',
+            icon: 'none'
+          })
+        }
+      },
+      fail(e){
+        wx.showToast({
+          title: '网络开小差了',
+          icon: 'none'
+        })
+      }
+    })
 
-    // 得到参数
-    // this.setData({
-    //   theindex: options.index,
-    //   today: this.data.dailyArray[options.index - 1]
-    // })
-
-
-
-
+    // var topic_title = this.data.topic_title
+    // var subStr = new RegExp('\n——', 'ig');//i 单个替换，ig全局
+    // var result = topic_title.replace(subStr, "\n&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——")
   },
-  // navbar切换
-  changestyle:function(e){
-    // 这里需要获取后台的题目和回答，赋值给questions和aiticle
 
-    // 获取data自定义
-    var index = e.target.dataset.index;
-    if(index == "a"){
-      this.setData({
-        itemstyle1: "item active",
-        itemstyle2:"item",
-        questions:"1随着科技的进步，现在看电影的方式不一，既可以在家看DVD、网络电影，也可以选择在电影院观看电影。对此，你的看法呢？",
-        article:"/images/articles/1.png",
-        btnanswer: "查看优选答案",
-        trueorfalse: true,
-        title:"作文题目"
-      })
-    }else{
-      this.setData({
-        itemstyle1: "item",
-        itemstyle2: "item active",
-        questions: "2随着科技的进步，现在看电影的方式不一，既可以在家看DVD、网络电影，也可以选择在电影院观看电影。对此，你的看法呢？",
-        article: "/images/translate/2.png",
-        btnanswer: "查看优选答案",
-        trueorfalse: true,
-        title: "翻译题目"
-      })
-    }
-  },
-  checkanswer:function(){
-    if (this.data.btnanswer =="查看优选答案"){
-      this.setData({
-        btnanswer: "收起答案",
-        trueorfalse: false
-      })
-    }else{
-      this.setData({
-        btnanswer: "查看优选答案",
-        trueorfalse: true
-      })
-    }
-  },
-  thenextqustion:function(){
-      // 从后台重新请求数据
-  }
+  
 })

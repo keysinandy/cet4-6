@@ -1,0 +1,19 @@
+<template name="recordcontent">
+          <view class='leftbox' data-id = "{{item.type_id}}" bindtap='tap' id='{{index}}'>
+        <view class='source1'><van-tag type="primary" size="medium">来源</van-tag><text class="sourcedetail">{{item.src}}</text></view>
+        <view class='source2'>卷宗:{{item.intro}}</view>
+        <view class='score'><text class='time' style='font-size:12px;color:#ccc;'>{{item.done_time}}</text></view>
+      </view>
+
+      <view class='rightbox'data-id = "{{item.type_id}}" bindtap='tap' id='{{index}}'>
+        <block wx:if="{{item.record == null ? false : true}}">
+        <view class='whole_circle' style='margin-top:18rpx;'>
+          <view style='text-align:center;margin-top:10rpx;font-size:50rpx;font-weight:bold;color:#00CCFF;'>{{item.record}}</view>
+        </view>
+        </block>
+            <!-- <view class='score'><text class='time'>{{item.done_time}}</text></view> -->
+            <!-- <view class='score'><van-tag type="danger" size="medium" plain>分数</van-tag><text class='number'>{{item.record}}</text></view> -->
+      </view>
+</template>
+
+      

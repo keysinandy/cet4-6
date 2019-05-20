@@ -1,7 +1,7 @@
 <!--pages/my/myinfo.wxml-->
 <view style='height:20rpx'></view>
 <view style="background-color:{{bottonClr[0]}}">
-  <botton class='list' style='height: 160rpx' id="0" bindtouchstart="CA" bindtouchend="CB" bindtap="tap">
+  <botton class='list' style='height: 160rpx' id="0" bindtouchstart="CA" bindtouchend="CB" bindtap="tap" disabled="{{true}}" >
     <view class='listInfo'>头像</view>
     <view class='listCont'>
       <open-data class="avatar" type="userAvatarUrl" ></open-data>
@@ -17,3 +17,6 @@
     <view class='listIcon'>＞</view>
   </botton>
 </view>
+<block wx:if="{{is_show}}">
+  <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" style='border-color:#355bc7;color:#a158cb;margin-bottom:30px;margin-top:10px'>获取授权信息</button>
+</block>

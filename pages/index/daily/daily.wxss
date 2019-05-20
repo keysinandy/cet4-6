@@ -1,80 +1,28 @@
-/* navbar */
-.daily .navbar{
-  background: #87a9eb;
-  width: 100%;
-  height:100rpx;
-  color: #ffffff;
-
-}
-
-.daily .inner{
-  width: 60%;
-   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin:  0 auto;
-}
-
-.daily .item{
-  width: 35%;
-  height: 100rpx;
-  line-height: 100rpx;
-  border:4rpx solid #fff;
-  border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
+.title{
+  font-weight: bold;
   text-align: center;
+  margin-top: 40rpx;
 }
-
-.active{
-  background: #fff;
-  color:#87a9eb;
-   border:4rpx solid #87a9eb;
+.topic_title{
+  text-align: center;
+  margin-bottom: 50rpx
 }
-
-
-/*内容*/
 .content{
-  margin: 20rpx;
-  font-size: 27rpx;
+  text-align:left;
+ text-indent:60rpx;
+ padding-bottom:50rpx;
+ padding-left: 40rpx;
+ line-height-step:36rpx;
+  margin-left:40rpx;
+  margin-right:40rpx;
 }
-
-
-.content .title{
-  font-size: 32rpx;
-  margin: 0 auto;
-  width:300rpx;
-  height:90rpx;
-  line-height: 90rpx;
-  color:#0099CC;
-  border-bottom:5rpx solid #87a9eb;
+.important_words{
+  margin-left: 40rpx
 }
-
-
-
-/* 查看答案和下一题按钮 */
-.content .questions{
-  margin: 40rpx 0;
-}
-
-.content .thebtns{
+.foot{
+  text-align:right;
+  font-size:12px;
+  margin-right:20rpx;
+  margin-bottom:50rpx;
   margin-top:60rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
- .thebtns .items{
-    width:200rpx;
-    height:80rpx;
-    line-height: 80rpx;
-    text-align: center;
-    background:#0099CC;
-    color:#fff;
-    border-radius: 10rpx;
-    box-shadow: 2rpx 2rpx 2rpx #ccc;
-  }
-
-
-.questions image{
-  margin-top:30rpx;
 }

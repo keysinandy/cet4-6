@@ -1,0 +1,43 @@
+/* pages/my/record/record.wxss */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  box-shadow: 0 10rpx 15rpx #ddd;
+  border-radius: 10rpx;
+  margin: 25rpx 40rpx 45rpx 40rpx;
+  padding: 20rpx 30rpx 20rpx 5rpx;
+  color: #444;
+}
+
+.content {
+  height:100rpx;
+  margin-top: 20rpx;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+
+#date{
+  font-size: 25rpx;
+  color: #888;
+}
+.iconArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.more{
+  color:#999999;
+  margin-top:20rpx;
+  margin-left:20rpx;
+}

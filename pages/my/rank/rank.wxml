@@ -1,57 +1,259 @@
 <!--pages/index/daily/daily.wxml-->
-<view class='daily'>
-  <view class='navbar'>
-    <view class='inner'>
-        <view class='{{itemstyle1}}' bindtap='changestyle' data-index = "a">四级</view>
-        <view class='{{itemstyle2}}' bindtap='changestyle' data-index = "b">六级</view>
-    </view>
-  </view>
 
-<!-- 内容 -->
-<view class='content'>
-<!-- title -->
-  <view class='title'>
-   <image src="https://sanleisen.cn/photo/CET/icons/task.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
-    {{title}}排行榜
-  </view>
-</view>
-</view> 
+<van-tabs>
+  <van-tab title="鸭蛋">
+  <button open-type='share' class='share'>
+      <van-icon name="comment" />
+      share
+    </button>
+            <view style='padding-bottom:80rpx'>
+      <view class='top_block'>
+      <view style='background-image:url({{eggInfo1[0].avatar}});background-repeat: no-repeat;background-size: 100% 100%;width: 100%;height: 421rpx;filter:blur(20px);position:absolute;z-index:-1'></view>
+        <view class='first_person'>
+         <view class='whole_circle' style='width:140rpx;height:140rpx;'>
+          <image src='{{eggInfo1[0].avatar}}' class='avatar_style_first'></image>
+          <view class='nickname'>{{eggInfo1[0].username}}</view>
+          <view class='record'>{{eggInfo1[0].score}}个 </view>
+         </view>
+         </view>
 
-
-
-<view class="page">
-    <view class="page__bd">
-        <view class="weui-cells weui-cells_after-title">
-        <!-- 前三名 -->
-                <view class="weui-cell weui-three" wx:for="{{userInfo1}}">
-                <view class="weui-cell__hd">
-                <view class='champions'>
-                 <image src='https://sanleisen.cn/photo/CET/icons/{{index+1}}.png' class='championImage'></image>
+         <view class='next_twoblock'>
+            <view class='second_person' >
+                <view class='whole_circle'>
+                  <image src='{{eggInfo1[1].avatar}}' class='avatar_style_other' ></image>
+                  <view class='nickname'>{{eggInfo1[1].username}}</view>
+                  <view class='record'>{{eggInfo1[1].score}}个 </view>
                 </view>
-                    <image src="{{item.avatar}}" style="margin-right: 20px;vertical-align: middle;width:60px; height: 60px; border-radius: 50%;"></image>
-                </view>
-                <view class="weui-cell__bd">
-                  <view class='theusername'>{{item.username}}</view>
-                </view>
-                <view class="weui-cell__ft">{{item.score}}</view>
             </view>
-          
-
-        <!-- 除了全三名之外的排行榜 -->
-            <view class="weui-cell weui-rest" wx:for="{{userInfo2}}">
-                <view class="weui-cell__hd">
-                <view class='num'>
-                 <image src="https://sanleisen.cn/photo/CET/icons/sun2.png"  class='sun'></image>
-                  <view  class='number'>{{index+4}}</view>
+            <view class='third_person'>
+                <view class='whole_circle'>
+                  <image src='{{eggInfo1[2].avatar}}' class='avatar_style_other'></image>
+                  <view class='nickname'>{{eggInfo1[2].username}}</view>
+                  <view class='record'>{{eggInfo1[2].score}}个 </view>
                 </view>
-                    <image src="{{item.avatar}}" style="margin-right: 20px;vertical-align: middle;width:85rpx; height: 85rpx;border-radius: 50%"></image>
-                </view>
-                <view class="weui-cell__bd">
-                  <view class='theusername'>{{item.username}}</view>
-                </view>
-                <view class="weui-cell__ft">{{item.score}}</view>
             </view>
-          
+         </view>
+      </view>
+      </view>
+
+
+      <!-- 三名之外 -->
+      <view class="bottom_block">
+        <block wx:for="{{eggInfo2}}" wx:key="index">
+          <block wx:if="{{item.username == null? false : true}}">
+          <view style='display:flex'>
+            <view class='others_view'>
+          <image src='{{eggInfo2[index].avatar}}' class='avatar_style_others' ></image>
+          <view class="badge">{{current[index]}}</view>
         </view>
-    </view>
-</view>
+        <view class='discribe'>
+          <view class='bottom_name'>
+            {{item.username}}
+          </view>
+          <view class='bottom_record'>
+            {{item.score}}个
+          </view>
+        </view>
+          </view>
+        </block>
+        </block>
+      </view>
+  </van-tab>
+
+  <van-tab title="学习时长">
+    <button open-type='share' class='share'>
+      <van-icon name="comment" />
+      share
+    </button>
+
+            <view style='padding-bottom:80rpx'>
+      <view class='top_block'>
+      <view style='background-image:url({{count_minute1[0].avatar}});background-repeat: no-repeat;background-size: 100% 100%;width: 100%;height: 421rpx;filter:blur(20px);position:absolute;z-index:-1'></view>
+        <view class='first_person'>
+         <view class='whole_circle' style='width:140rpx;height:140rpx;'>
+          <image src='{{count_minute1[0].avatar}}' class='avatar_style_first'></image>
+          <view class='nickname'>{{count_minute1[0].username}}</view>
+          <view class='record'>{{count_minute1[0].score}}分钟 </view>
+         </view>
+         </view>
+
+         <view class='next_twoblock'>
+            <view class='second_person' >
+                <view class='whole_circle'>
+                  <image src='{{count_minute1[1].avatar}}' class='avatar_style_other' ></image>
+                  <view class='nickname'>{{count_minute1[1].username}}</view>
+                  <view class='record'>{{count_minute1[1].score}}分钟 </view>
+                </view>
+            </view>
+            <view class='third_person'>
+                <view class='whole_circle'>
+                  <image src='{{count_minute1[2].avatar}}' class='avatar_style_other'></image>
+                  <view class='nickname'>{{count_minute1[2].username}}</view>
+                  <view class='record'>{{count_minute1[2].score}}分钟 </view>
+                </view>
+            </view>
+         </view>
+      </view>
+      </view>
+
+
+      <!-- 三名之外 -->
+      <view class="bottom_block">
+        <block wx:for="{{count_minute2}}" wx:key="index">
+          <block wx:if="{{item.username == null? false : true}}">
+          <view style='display:flex'>
+            <view class='others_view'>
+          <image src='{{count_minute2[index].avatar}}' class='avatar_style_others' ></image>
+          <view class="badge">{{current[index]}}</view>
+        </view>
+        <view class='discribe'>
+          <view class='bottom_name'>
+            {{item.username}}
+          </view>
+          <view class='bottom_record'>
+            {{item.score}}分钟
+          </view>
+        </view>
+          </view>
+        </block>
+        </block>
+      </view>
+  </van-tab>
+
+  <!-- <van-tab title="四级">
+  <block wx:if="{{show_cet}}">
+  <button open-type='share' class='share'>
+      <van-icon name="comment" />
+      share
+    </button>
+    <view style='padding-bottom:80rpx'>
+      <view class='top_block'>
+      <view style='background-image:url({{FourInfo1[0].avatar}});background-repeat: no-repeat;background-size: 100% 100%;width: 100%;height: 421rpx;filter:blur(20px);position:absolute;z-index:-1'></view>
+        <view class='first_person'>
+         <view class='whole_circle' style='width:140rpx;height:140rpx;'>
+          <image src='{{FourInfo1[0].avatar}}' class='avatar_style_first'></image>
+          <view class='nickname'>{{FourInfo1[0].username}}</view>
+          <view class='record'>{{FourInfo1[0].score}}分 </view>
+         </view>
+         </view>
+
+         <view class='next_twoblock'>
+            <view class='second_person' >
+                <view class='whole_circle'>
+                  <image src='{{FourInfo1[1].avatar}}' class='avatar_style_other' ></image>
+                  <view class='nickname'>{{FourInfo1[1].username}}</view>
+                  <view class='record'>{{FourInfo1[1].score}}分 </view>
+                </view>
+            </view>
+            <view class='third_person'>
+                <view class='whole_circle'>
+                  <image src='{{FourInfo1[2].avatar}}' class='avatar_style_other'></image>
+                  <view class='nickname'>{{FourInfo1[2].username}}</view>
+                  <view class='record'>{{FourInfo1[2].score}}分 </view>
+                </view>
+            </view>
+         </view>
+      </view>
+      </view> -->
+
+
+      <!-- 三名之外 -->
+      <!-- <view class="bottom_block">
+        <block wx:for="{{FourInfo2}}" wx:key="index">
+          <block wx:if="{{item.username == null? false : true}}">
+          <view style='display:flex'>
+            <view class='others_view'>
+          <image src='{{FourInfo2[index].avatar}}' class='avatar_style_others' ></image>
+          <view class="badge">{{current[index]}}</view>
+        </view>
+        <view class='discribe'>
+          <view class='bottom_name'>
+            {{item.username}}
+          </view>
+          <view class='bottom_record'>
+            {{item.score}}分
+          </view>
+        </view>
+          </view>
+        </block>
+        </block>
+      </view>
+        </block>
+
+        <block wx:if="{{!show_cet}}">
+          <view style='text-align:center;margin-top:400rpx;font-weight:bold;'>
+            天梯塌了，施工团队正在路中…………………………
+          </view>
+       </block>
+  </van-tab>
+
+  <van-tab title="六级">
+  
+  <block wx:if="{{show_cet}}">
+  <button open-type='share' class='share'>
+      <van-icon name="comment" />
+      share
+    </button>
+            <view style='padding-bottom:80rpx'>
+      <view class='top_block'>
+      <view style='background-image:url({{SixInfo1[0].avatar}});background-repeat: no-repeat;background-size: 100% 100%;width: 100%;height: 421rpx;filter:blur(20px);position:absolute;z-index:-1'></view>
+        <view class='first_person'>
+         <view class='whole_circle' style='width:140rpx;height:140rpx;'>
+          <image src='{{SixInfo1[0].avatar}}' class='avatar_style_first'></image>
+          <view class='nickname'>{{SixInfo1[0].username}}</view>
+          <view class='record'>{{SixInfo1[0].score}}分 </view>
+         </view>
+         </view>
+
+         <view class='next_twoblock'>
+            <view class='second_person' >
+                <view class='whole_circle'>
+                  <image src='{{SixInfo1[1].avatar}}' class='avatar_style_other' ></image>
+                  <view class='nickname'>{{SixInfo1[1].username}}</view>
+                  <view class='record'>{{SixInfo1[1].score}}分 </view>
+                </view>
+            </view>
+            <view class='third_person'>
+                <view class='whole_circle'>
+                  <image src='{{SixInfo1[2].avatar}}' class='avatar_style_other'></image>
+                  <view class='nickname'>{{SixInfo1[2].username}}</view>
+                  <view class='record'>{{SixInfo1[2].score}}分 </view>
+                </view>
+            </view>
+         </view>
+      </view>
+      </view> -->
+
+
+      <!-- 三名之外 -->
+      <!-- <view class="bottom_block">
+        <block wx:for="{{SixInfo2}}" wx:key="index">
+          <block wx:if="{{item.username == null? false : true}}">
+          <view style='display:flex'>
+            <view class='others_view'>
+          <image src='{{SixInfo2[index].avatar}}' class='avatar_style_others' ></image>
+          <view class="badge">{{current[index]}}</view>
+        </view>
+        <view class='discribe'>
+          <view class='bottom_name'>
+            {{item.username}}
+          </view>
+          <view class='bottom_record'>
+            {{item.score}}分
+          </view>
+        </view>
+          </view>
+        </block>
+        </block>
+      </view>
+       </block>
+
+       <block wx:if="{{!show_cet}}">
+          <view style='text-align:center;margin-top:400rpx;font-weight:bold;'>
+            天梯塌了，施工团队正在路中…………………………
+          </view>
+       </block>
+  </van-tab> -->
+
+</van-tabs>
+

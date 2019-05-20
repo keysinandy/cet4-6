@@ -82,3 +82,31 @@
   height: 80rpx;
   background-color: rgb(243, 240, 240)
 }
+.ceshi{
+  color: #
+}
+.userinfo {
+  position: relative;
+  width: 100%;
+  height: 421rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #00CCFF;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-items: center;
+  z-index: -1
+}
+.mark_front{
+  display:flex;
+  color:white;
+  align-items:center;
+  line-height: 40px;
+  border-bottom: 1px solid white
+}
+.mark_record{
+  font-size:45px;
+  margin-left:5px;
+  margin-right:5px;
+
+}

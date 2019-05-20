@@ -1,0 +1,21 @@
+<van-cell-group custom-class="cell_style">
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="姓名"
+    placeholder="请输入姓名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ number }}"
+    type="number"
+    label="准考证号"
+    placeholder="请输入准考证号"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group>
+
+<button class='subBtn' style='border-color:#355bc7;color:#a158cb;margin-top:50px;' plain bindtap='submit'>查询</button>

@@ -1,0 +1,56 @@
+<!--pages/my/collect/content.wxml-->
+<import src="../../../template/collectcontent.wxml"/>
+<van-tabs active="{{active}}" bind:click="onClick">
+  <van-tab title="写作">
+     <view class='wrapper'>
+      <view class='wrapperbox' wx:for="{{contentInfo}}" wx:key="docollect">
+          <template is="collectcontent" data="{{item,index}}" id="{{index}}"/>
+      </view>
+    </view>
+</van-tab>
+
+  <van-tab title="仔细阅读">   
+  <view class='wrapper'>
+      <view class='wrapperbox' wx:for="{{contentInfo}}" wx:key="docollect">
+          <template is="collectcontent" data="{{item,index}}"/>
+      </view>
+    </view>
+</van-tab>
+
+  <van-tab title="选词填空">
+        <view class='wrapper'>
+      <view class='wrapperbox' wx:for="{{contentInfo}}" wx:key="docollect">
+          <template is="collectcontent" data="{{item,index}}"/>
+      </view>
+    </view>
+  </van-tab>
+
+  <van-tab title="文段匹配">
+        <view class='wrapper'>
+      <view class='wrapperbox' wx:for="{{contentInfo}}" wx:key="docollect">
+          <template is="collectcontent" data="{{item,index}}"/>
+      </view>
+    </view>
+  </van-tab>
+
+   <van-tab title="翻译">
+        <view class='wrapper'>
+      <view class='wrapperbox' wx:for="{{contentInfo}}" wx:key="docollect">
+          <template is="collectcontent" data="{{item,index}}"/>
+      </view>
+    </view>
+   </van-tab>
+   
+</van-tabs>
+
+
+
+
+
+<!-- 没有更多题目 -->
+<view class='foot'>
+  <view id='footLine' />
+  <view style='padding:0 20rpx 0 20rpx'>{{footTitle}}</view>
+  <view id='footLine' />
+</view>
+

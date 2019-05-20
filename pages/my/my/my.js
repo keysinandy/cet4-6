@@ -1,5 +1,6 @@
 var appData = getApp().globalData;
- const userUrl = require('../../../config.js').userUrl;
+const userUrl = require('../../../config.js').userUrl;
+const openid = wx.getStorageSync('openid')
 
 
 Page({
@@ -11,7 +12,7 @@ Page({
     ],
     setArr: [{
         id: "2",
-        name: "周期打卡",
+        name: "打卡签到",
         img: "medal",
         margin: "0"
       },
@@ -46,7 +47,9 @@ Page({
         margin: "10"
       },
     ],
+    online_people: 423,
     bin: '',
+    egg_num: 0,
   },
 
   tap: e => {
@@ -66,12 +69,12 @@ Page({
         break;
       case "3":
         wx.navigateTo({
-          url: '../record/record'
+          url: '../record/index'
         });
         break;
       case "4":
         wx.navigateTo({
-          url: '/pages/index/answer/answer_chapter/chapter?subject=&type=zjlx'
+          url: '../collect/index'
         });
         break;
       case "5":
@@ -106,11 +109,44 @@ Page({
   },
 
   onShow: function() {
+    const openid = wx.getStorageSync('openid')
+    var that = this
+    wx.request({
+      url: userUrl + '/get_eggnum',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      method: 'POST',
+      data: {
+        openid: wx.getStorageSync('openid')
+      },
+      success(e) {
+        console.log(e)
+        that.data.egg_num = e.data.data.duckegg
+        that.setData({
+          egg_num: that.data.egg_num
+        })
+      }
+    })
     this.setData({
       userInfo: wx.getStorageSync('userInfo'),
       opacity: 0
     })
     this.op(40)
+  },
+  onLoad(){
+    var that = this
+    const openid = wx.getStorageSync('openid')
+    wx.request({
+      url: userUrl + '/get_onlinepeople',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      method: 'POST',
+      data: {
+      },
+      success(e) {
+        that.setData({
+          online_people: e.data.online_num
+        })
+      }
+    })
   },
 
   op: function(times) {

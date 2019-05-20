@@ -1,30 +1,41 @@
-<!--pages/index/daily/daily.wxml-->
-<view class='daily'>
-  <!-- navbar -->
-  <view class='navbar'>
-    <view class='inner'>
-        <view class='{{itemstyle1}}' bindtap='changestyle' data-index = "a">每日美文</view>
-        <!-- <view class='{{itemstyle2}}' bindtap='changestyle' data-index = "b">翻译</view> -->
+<view>
+  <view class='title'>
+    —— {{time}} ——
+  </view>
+  <view class='topic_title'>
+    <text decode='{{true}}'>
+      {{topic_title}}
+    </text>
+  </view>
+  <view>
+    <view decode='{{true}}' class='content'>
+      <text>
+        {{content}}
+      </text>
+    </view>
+    <view class='content' style='font-size:14px;'>
+    <text>
+      {{translation}}
+    </text>
     </view>
   </view>
 
-<!-- 内容 -->
-<view class='content'>
-<!-- title -->
-  <view class='title'>
-   <image src="https://sanleisen.cn/photo/CET/icons/write1.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
-    {{title}}
-  </view>
-<!-- content -->
-  <view class='questions'>
-    <view>{{questions}}</view>
-    <image src='{{article}}' hidden='{{trueorfalse}}'></image>
-    <view class='thebtns'>
-      <view class='items' bindtap="checkanswer">{{btnanswer}}</view>
-      <view class='items' bindtap="thenextqustion">下一题</view>
+  <view>
+      <view class='title' style='text-align:left;margin-left:15rpx;margin-bottom:20rpx;'>重点词汇:</view>
+      <block wx:for="{{important_words}}" wx:key="id">
+    <view class='important_words'>
+      <view>
+      {{item.words}}
     </view>
+    <view style='font-size:28rpx;padding-left:70rpx;padding-top:15rpx;padding-bottom:15rpx;'>
+      {{item.describe}}
+    </view>
+    </view>
+  </block>
+  </view>
+  <view  class='foot'>
+    <text decode='{{true}}'>
+      {{foot}}
+    </text>
   </view>
 </view>
-
-
-</view> 

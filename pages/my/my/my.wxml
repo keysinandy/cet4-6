@@ -1,9 +1,13 @@
 <view class="userinfo" id='0' bindlongtap="tap">
   <open-data class="userAvatar" type="userAvatarUrl" style='opacity: {{opacity}}'></open-data>
   <view class='userText' style='opacity: {{opacity}}'>
+    <view style='position:absolute;left:30rpx;top:40rpx;font-size:28rpx;color:white;'>
+      {{online_people}}人一起在冲鸭~~~
+    </view>
     <open-data class='userNickname' type="userNickName"></open-data>
     <!--<text class='userLabel'>点击头像更改个人信息</text>-->
   </view>
+  <view>🥚×{{egg_num}}</view>
 </view>
 
   <view wx:for='{{setArr}}' wx:for-item="i" wx:key="name" style="background-color:{{bottonClr[i.id]}};margin-bottom:{{i.margin}}rpx">

@@ -1,17 +1,78 @@
-<view style='padding:30rpx;background-color:#fff' wx:if='{{!loading}}'>
-  <view wx:for='{{questions}}' class='border' wx:key='unique' bindtap='tap' id='{{item.id}}' >
-    <image src='' class='icon' />
-    <!-- 此处是专题练习封面 -->
-    <view class='contain'>
-      <view class='title'>来源：{{item.src}}</view>
-      <text class='subtitle'>缩略内容：\n{{item.intro}}</text>
+<import src="../../../template/recordcontent.wxml"/>
+<van-tabs active="{{ active }}" bind:click="onClick">
+  <van-tab title="写作">
+     <view class='wrapper'>
+      <block wx:for="{{contentInfo}}" wx:key="dorecord">
+      <block wx:if="{{show_false == 'false' ? true : ((item.record == null || (item.record != 20 && (item.type_id[0] == 3 || item.type_id[0] == 4)) || (item.record != 10 && item.type_id[0] == 2)) ? true : false)}}">
+      <view class='wrapperbox'>
+        <template is="recordcontent" data="{{item,index,show_false}}"/>
+      </view>
+          </block>
+      </block>
     </view>
-  </view>
-  <view style='border-bottom: 1rpx #ccc solid'></view>
-</view>
+</van-tab>
 
-<view class='foot' wx:if='{{!loading}}'>
+  <van-tab title="仔细阅读">   
+  <view class='wrapper'>
+      <block wx:for="{{contentInfo}}" wx:key="dorecord">
+      <block wx:if="{{show_false == 'false' ? true : ((item.record == null || (item.record != 20 && (item.type_id[0] == 3 || item.type_id[0] == 4)) || (item.record != 10 && item.type_id[0] == 2)) ? true : false)}}">
+      <view class='wrapperbox'>
+        <template is="recordcontent" data="{{item,index,show_false}}"/>
+      </view>
+          </block>
+      </block>
+    </view>
+</van-tab>
+
+  <van-tab title="选词填空">
+        <view class='wrapper'>
+      <block wx:for="{{contentInfo}}" wx:key="dorecord">
+      <block wx:if="{{show_false == 'false' ? true : ((item.record == null || (item.record != 20 && (item.type_id[0] == 3 || item.type_id[0] == 4)) || (item.record != 10 && item.type_id[0] == 2)) ? true : false)}}">
+      <view class='wrapperbox'>
+        <template is="recordcontent" data="{{item,index,show_false}}"/>
+      </view>
+          </block>
+      </block>
+    </view>
+  </van-tab>
+
+  <van-tab title="文段匹配">
+        <view class='wrapper'>
+      <block wx:for="{{contentInfo}}" wx:key="dorecord">
+      <block wx:if="{{show_false == 'false' ? true : ((item.record == null || (item.record != 20 && (item.type_id[0] == 3 || item.type_id[0] == 4)) || (item.record != 10 && item.type_id[0] == 2)) ? true : false)}}">
+      <view class='wrapperbox'>
+        <template is="recordcontent" data="{{item,index,show_false}}"/>
+      </view>
+          </block>
+      </block>
+    </view>
+  </van-tab>
+
+   <van-tab title="翻译">
+        <view class='wrapper'>
+      <block wx:for="{{contentInfo}}" wx:key="dorecord">
+      <block wx:if="{{show_false == 'false' ? true : ((item.record == null || (item.record != 20 && (item.type_id[0] == 3 || item.type_id[0] == 4)) || (item.record != 10 && item.type_id[0] == 2)) ? true : false)}}">
+      <view class='wrapperbox'>
+        <template is="recordcontent" data="{{item,index,show_false}}"/>
+      </view>
+          </block>
+      </block>
+    </view>
+   </van-tab>
+
+</van-tabs>
+
+
+<!-- 暂时没有记录 -->
+<!-- <view class='collectwrapper'>
+  <text hidden='{{isHidden}}' class='collect'>暂时没有做题记录哦！</text>
+</view> -->
+
+
+<!-- 没有更多题目 -->
+<view class='foot'>
   <view id='footLine' />
   <view style='padding:0 20rpx 0 20rpx'>{{footTitle}}</view>
   <view id='footLine' />
 </view>
+

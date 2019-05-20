@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "每日美文"
+  "navigationBarTitleText": "每周美文",
+  "navigationBarBackgroundColor": "#CCCCFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#CCCCFF"
 }

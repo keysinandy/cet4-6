@@ -1,6 +1,14 @@
 <!--pages/index/cet/trueexamcard/trueexamcard.wxml-->
+<block wx:if="{{istrue_analyse}}">
+  <view class="userinfo" id='0'>
+    <van-icon name="thumb-circle-o" color='white' size='100px'/>
+    <view class='mark_front'> 得到<view class='mark_record'>{{mark}}</view>分！</view><view style='color:#F0FFFF;font-size:12px;margin-top:5px'>共4道</view>
+  </view>
+</block>
 <form bindsubmit='submit'>
 <view class='greetingc'>{{title}}</view>
+<!-- <真题练习> -->
+<block wx:if='{{is_show}}'>
 <view class="page__bd page__bd_spacing">
         <view class="kind-list">
             <block wx:for="{{list}}" wx:key="name">
@@ -23,6 +31,25 @@
             </block>
         </view>
     </view>
-
+<block wx:if="{{!istrue_analyse}}"> 
 <button class='subBtn' style='border-color:#355bc7;color:#a158cb' plain form-type='submit'>Submit</button>
+</block>
+</block>
+
+<!-- <顺序练习> -->
+<block  wx:for="{{order_list}}"wx:if='{{is_show2}}' wx:key='id'>
+  <van-cell
+  title= "{{item.name}}"
+  icon= "{{item.icon}}"
+  is-link
+  url="../{{order_type}}/{{order_type}}?name={{title}}&chapter={{cet}}&id={{item.id}}&from={{from}}"
+/>
+</block>
+
+<block wx:if="{{is_show3}}">
+  <view>
+  <text class='greetingc'>----------暂未开通尽情期待----------</text>
+</view>
+
+</block>
 </form>

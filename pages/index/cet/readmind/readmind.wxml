@@ -5,11 +5,10 @@
       </view>
 
 <view>
-  <scroll-view class='scroll' scroll-y='true' bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
-    <text decode="{{true}}" space="{{true}}" class='readtext'>&nbsp;&nbsp;&nbsp;&nbsp;For thousands of years, people have known that the best way to understand a concept is to explain it to someone else. "While we teach, we learn," said Roman philosopher Seneca. Now scientists are bringing this ancient wisdom up-to-date. They're documenting why teaching is such a fruitful way to learn, and designing innovative ways for young people to engage in instruction. Researchers have found that students who sign up to tutor others work harder to understand the material, recall it more accurately and apply it more effectively. Student teachers score higher on tests than pupils who're learning only for their own sake. But how can children, still learning themselves, teach others? One answer: They can tutor younger kids. Some studies have found that first-born children are more intelligent than their later-born siblings (兄弟姐妹). This suggests their higher IQs result from the time they spend teaching their siblings. Now educators are experimenting with ways to apply this model to academic subjects. They engage college undergraduates to teach computer science to high school students, who in turn instruct middle school students on the topic. But the most cutting-edge tool under development is the "teachable agent"—a computerized character who learns, tries, makes mistakes and asks questions just like a real-world pupil. Computer scientists have created an animated (动画的) figure called Betty's Brain, who has been "taught" about environmental science by hundreds of middle school students.
-&nbsp;&nbsp;&nbsp;&nbsp;Student teachers are motivated to help Betty master certain materials. While preparing to teach, they organize their knowledge and improve their own understanding. And as they explain the information to it, they identify problems in their own thinking.
-&nbsp;&nbsp;&nbsp;&nbsp;Feedback from the teachable agents further enhances the tutors' learning. The agents' questions compel student tutors to think and explain the materials in different ways, and watching the agent solve problems allows them to see their knowledge put into action. Above all, it's the emotions one experiences in teaching that facilitate learning. Student tutors feel upset when their teachable agents fail, but happy when these virtual pupils succeed as they derive pride and satisfaction from someoneelse's accomplishment.</text>
-
+  <scroll-view class='scroll' scroll-y='true'>
+    <text decode="{{true}}" space="{{true}}" class='readtext'>
+    {{read_text}}
+    </text>
   </scroll-view>
 </view>
 
@@ -18,12 +17,14 @@
 <view>
   <swiper indicator-dots='false' class='answer' bindchange='roll'>
     <swiper-item wx:for="{{grids}}" wx:key="*this"> 
-      <text >{{textUrl[item]}}\n</text>
-      <radio-group bindchange='xzgroup'>
-      <radio type='circle' class='xxq'  value='{{item}}-A'> <text class='xz'>{{choose[item][0]}}\n</text></radio>
-      <radio type='circle' class='xxq'  value='{{item}}-B'> <text class='xz'>{{choose[item][1]}}\n</text></radio>
-      <radio type='circle' class='xxq'  value='{{item}}-C'> <text class='xz'>{{choose[item][2]}}\n</text></radio>
-      <radio type='circle' class='xxq'  value='{{item}}-D'> <text class='xz'>{{choose[item][3]}}\n</text></radio>
+      <view style='padding-right:10rpx;'>
+        <text >{{textUrl[item]}}\n</text>
+      </view>
+      <radio-group bindchange='xzgroup' class="radio-group">
+      <radio type='circle' class='xxq' color='#87a9eb' value='{{item}}-A' checked='{{check[index][0]}}'> <text class='xz'>{{choose[item][0]}}\n</text></radio>
+      <radio type='circle' class='xxq' color='#87a9eb' value='{{item}}-B' checked='{{check[index][1]}}'> <text class='xz'>{{choose[item][1]}}\n</text></radio>
+      <radio type='circle' class='xxq' color='#87a9eb' value='{{item}}-C' checked='{{check[index][2]}}'> <text class='xz'>{{choose[item][2]}}\n</text></radio>
+      <radio type='circle' class='xxq' color='#87a9eb' value='{{item}}-D' checked='{{check[index][3]}}'> <text class='xz'>{{choose[item][3]}}\n</text></radio>
       </radio-group>
     </swiper-item>
   </swiper>
@@ -32,13 +33,38 @@
       ({{n}}/5)
     </view>
     </view>
-
-    <van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item icon="{{save}}" bindtap='save'>{{is_save}}</van-tabbar-item>
-  <van-tabbar-item icon="orders-o">答题卡</van-tabbar-item>
-  <van-tabbar-item icon="clock-o">time</van-tabbar-item>
-</van-tabbar>
-
-
 </view>
 </view>
+<block wx:if="{{is_show1}}">
+   <view class='feet' style="width:100%;display:flex;height: 55px;">
+    <button style="width: 100%;border: none;margin-top: 5px;"plain bindtap='save'>
+     <van-icon name='{{save}}' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">{{is_save}}</text></view>
+    </button>
+  <button style="width: 100%;border: none;margin-top: 5px;"plain bindtap='submit'>
+     <van-icon name='orders-o' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">答题卡</text></view>
+    </button>
+    <button style="width: 100%;border: none;margin-top: 5px;"plain>
+     <van-icon name='clock-o' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">time</text></view>
+    </button>
+  </view>
+</block>
+
+<block wx:if="{{is_show2}}">
+  <view class='feet' style="width:100%;display:flex;height: 55px;">
+    <button style="width: 100%;border: none;margin-top: 5px;"plain bindtap='save'>
+     <van-icon name='{{save}}' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">{{is_save}}</text></view>
+    </button>
+  <button style="width: 100%;border: none;margin-top: 5px;"plain bindtap='submit'>
+     <van-icon name='orders-o' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">提交</text></view>
+    </button>
+    <button style="width: 100%;border: none;margin-top: 5px;"plain>
+     <van-icon name='clock-o' custom-style="display: block;"/>
+     <view style='margin-top: -10px;'><text style="font-size: 12px;">time</text></view>
+    </button>
+  </view>
+</block>

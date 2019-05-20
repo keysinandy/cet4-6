@@ -1,38 +1,42 @@
 {
   "pages": [
     "pages/index/index/index",
+    "pages/index/daily/daily",
+    "pages/my/rank/rank",
+    "pages/index/cet/card/card",
+    "pages/index/cet/analyse/analyse",
+    "pages/index/cet/writing/writing",
     "pages/index/cet/trueexam/trueexam",
     "pages/register/register",
     "pages/my/myInfo/myInfo",
     "pages/my/myInfo/change",
     "pages/index/cet/text/text",
     "pages/index/cet/readmind/readmind",
-    "pages/index/cet/translate/translate",
-    "pages/index/daily/more",
-    "pages/index/daily/daily",
-    "pages/introduce/introduce",
+    "pages/index/cet/translation/translation",
     "pages/my/my/my",
     "pages/index/cet/cloze/cloze",
     "pages/my/help/help",
     "pages/index/cet/match/match",
     "pages/index/find/find",
-    "pages/my/rank/rank",
     "pages/my/sign/sign",
     "pages/index/cet/flextext/flextext",
-    "pages/index/cet/trueexamcard/trueexamcard",
-    "pages/index/cet/writing/writing",
-    "pages/index/cet/card/card",
-    "pages/my/record/record",
-    "pages/my/record/content"
+    "pages/my/record/content",
+    "pages/find/query/query/query",
+    "pages/find/notice/list/list",
+    "pages/index/cet/mark/mark",
+    "pages/my/collect/index",
+    "pages/my/collect/content",
+    "pages/my/record/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTitleText": "四六级小助手",
     "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#87a9eb"
+    "navigationBarBackgroundColor": "#87a9eb",
+    "backgroundColor": "#87a9eb"
   },
   "tabBar": {
-    "selectedColor": "#090",
+    "selectedColor": "#87a9eb",
     "list": [
       {
         "pagePath": "pages/index/index/index",
@@ -56,6 +60,7 @@
   },
   "usingComponents": {
     "van-tabbar": "/dist/tabbar/index",
+    "i-icon": "../../dist/icon/index",
     "van-tabbar-item": "/dist/tabbar-item/index",
     "van-tag": "/dist/tag/index",
     "van-popup": "/dist/popup/index",
@@ -76,6 +81,10 @@
     "i-cell-group": "/compenent/dist/cell-group/index",
     "van-cell": "/dist/cell/index",
     "van-cell-group": "/dist/cell-group/index",
-    "van-loading": "/dist/loading/index"
+    "van-loading": "/dist/loading/index",
+    "i-radio-group": "/compenent/dist/radio-group/index",
+    "i-radio": "/compenent/dist/radio/index",
+    "van-badge": "/dist/badge/index",
+    "van-badge-group": "/dist/badge-group/index"
   }
 }

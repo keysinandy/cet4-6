@@ -1,14 +1,13 @@
-<view class='head'>题型分类</view>
-
 <view wx:for='{{type}}' wx:key='name' class='card'>  
   <view class='iconArea'>
-    <image class='icon' src='https://sanleisen.cn/photo/CET/icons/rili.png'/>
+    <image class='icon' src='https://sanleisen.cn/photo/CET/collect/{{index}}.png'/>
   </view>
   <!-- 此处图标 -->
-  <view class='content'>
-    <view id='name' bindtap='tap'>题型：{{item.name}}</view>
-    <view id='num'  bindtap='tap'>记录题数：{{item.num}}个</view>
-    <view id='date' bindtap='tap'>最后记录：{{item.date}}</view>
+  <view class='content' bindtap='tap' id='{{index}}'>
+    <view>题型：{{item.name}}</view>
+    <view> 收藏题数：{{item.num}}个</view>
+    <view class="time"> 最后做题时间:{{item.time}}</view>
   </view>
 
+  <view class='more'>>></view>
 </view>

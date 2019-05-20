@@ -1,0 +1,14 @@
+<van-cell-group>
+<van-cell
+  title="英语四级"
+  is-link
+  url="./content?id=0"
+/>
+
+<van-cell
+  title="英语六级"
+  is-link
+  url="./content?id=1"
+/>
+</van-cell-group>
+

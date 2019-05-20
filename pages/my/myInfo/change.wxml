@@ -1,10 +1,11 @@
+<block wx:if="{{is_other}}">
 <van-cell-group>
   <van-field
     value="{{ changeText }}"
     center
     clearable
     label='更改：'
-    placeholder="请输入更改的信息"
+    placeholder="{{lastText}}"
     border="false"
     use-button-slot
     bind:change="onChange"
@@ -12,3 +13,34 @@
     <van-button slot="button" size="small" type="primary" bindtap='save'>保存更改</van-button>
   </van-field>
 </van-cell-group>
+</block>
+
+<block wx:if="{{is_sex}}">
+  <view class='fake'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view style='display:flex'>
+        <view class="fake_title">
+          更改性别:</view><view class='fake_field'><view class='fake_picker'>{{array[index]}}</view></view>
+      </view>
+      </picker>
+      <botton class="fake_botton" bindtap="save">保存更改</botton>
+    </view>
+</block>
+
+<block wx:if="{{is_date}}">
+  <view class='fake'>
+      <picker
+        mode="date"
+        value="{{lastText}}"
+        start="1900-09-01"
+        end="{{now_date}}"
+        bindchange="bindDateChange"
+      >
+      <view style='display:flex'>
+        <view class="fake_title">
+          更改入学时间:</view><view class='fake_field'><view class='fake_picker'>{{changeText}}</view></view>
+      </view>
+      </picker>
+      <botton class="fake_botton" bindtap="save">保存更改</botton>
+    </view>
+</block>

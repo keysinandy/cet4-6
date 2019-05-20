@@ -1,0 +1,38 @@
+page{
+  background:#fff;
+}
+
+.wrapper{
+  padding:15rpx;
+}
+.wrapperbox{
+  display: flex;
+  height:160rpx;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f0f0f4;
+  padding:10rpx;
+}
+
+.leftbox .sourcedetail{
+  margin-left:10rpx;
+  /* font-family:'Courier New', Courier, monospace;
+   */
+   font: 15px/1.5 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
+}
+
+
+/* 没有更多题目 */
+.foot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+#footLine {
+  border-top: 3rpx solid #ddd;
+  width: 140rpx;
+}

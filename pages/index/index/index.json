@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "主页面",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#D6D8F2",
+  "backgroundColor": "#D6D8F2"
 }

@@ -7,5 +7,10 @@ var config = {
   appid,
   wxUrl: `${Url}/Weixin/`,
   userUrl: `${Url}/User/`,
+  rankUrl: `${Url}/User/rank`,
+  collectUrl: `${Url}/Collectionlibrary/get_collectlist`,
+  dorecordlistUrl: `${Url}/Dorecord/get_dorecordlist`,
+  collectdetailUrl: `${Url}/Collectionlibrary/get_collectdetail`,
+  dorecorddetailUrl: `${Url}/Dorecord/get_dorecorddetail`
 };
 module.exports = config

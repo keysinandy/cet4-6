@@ -2,5 +2,8 @@
   "usingComponents": {
     "van-tabbar": "/dist/tabbar/index",
     "van-tabbar-item": "/dist/tabbar-item/index"
-  }
+  },
+  "navigationBarTitleText": "发现",
+  "navigationBarBackgroundColor": "#D6D8F2",
+  "backgroundColor": "#D6D8F2"
 }

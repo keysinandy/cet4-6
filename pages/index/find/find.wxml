@@ -1,1 +1,11 @@
-<!--pages/index/find/find.wxml-->
+<!--pages/my/myinfo.wxml-->
+<view style='height:20rpx'></view>
+
+<view wx:for='{{info}}' wx:for-item="i" wx:key="name" style="background-color:{{bottonClr[i.id]}}; margin-bottom:{{i.margin}}rpx">
+  <botton class='list' id="{{i.id}}" bindtap="tap">
+    <image class='listImg' src='/images/find/{{i.img}}.png'/>
+    <view class='listInfo'>{{i.name}}</view>
+    <view class='listCont'>{{i.info}}</view>
+    <view class='listIcon'>＞</view>
+  </botton>
+</view>

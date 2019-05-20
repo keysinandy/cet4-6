@@ -8,7 +8,6 @@ page {
   height: 421rpx;
   display: flex;
   flex-direction: column;
-  background-image: url('https://sanleisen.cn:443/photo/CET/signBG.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   align-items: center;
@@ -83,6 +82,7 @@ page {
   display: flex;
   flex-direction: row;
   margin: 0rpx 40rpx 0rpx 40rpx;
+  align-items: center
 }
 
 .listTitle {
@@ -100,7 +100,7 @@ page {
   flex: 1;
   height: 60rpx;
   width: 60rpx;
-  margin: 25rpx 50rpx 0rpx 0rpx;
+  margin: 0rpx 50rpx 0rpx 0rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,4 +127,6 @@ page {
   flex-direction: column;
   justify-content: center;
 }
-
+.btn_status{
+  text-align: center
+}

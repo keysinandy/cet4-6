@@ -1,63 +1,98 @@
-<view class='maintitle'>
-  <view>
-    <image src="https://sanleisen.cn/photo/CET/icons/rili.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
-     <text style='font-size:28rpx;'>每日美文</text>
-  </view>
- 
-  <view style='font-size:28rpx;' class='more' bindtap='more'>查看全部<text class='arrow'>></text></view>
-</view>
 
-
-<!-- 滚动 -->
-<view class='content'>
-  <scroll-view scroll-x class='scroll'>
-    <block wx:for="{{count}}" wx:key="{{item}}">
-      <view class='wrapper' bindtap='goToDaily' data-index="{{index}}">
-        <view class='inner'>
-          <view>
-            <image src='/images/daily/1.jpg'></image>
+<view class='mix_title' style='height:{{top_backcolor}}px'>
+  <view style='margin-top: 17px;'>
+    <view class='left_circle' style='left:{{circlr_margin}}px;background-color: rgb(241, 242, 255);height:{{circle_height}}px;width:{{circle_width}}px'></view>
+    <view class='right_circle' style='right:{{circlr_margin}}px;background-color: rgb(241, 242, 255);height:{{circle_height}}px;width:{{circle_width}}px'></view>
+      <view class='left_title' style='background-color: rgb(241, 242, 255);height:{{circle_height}}px;color:#666666;'>
+        <view style='font-size:15px;font-weight:bold;display:flex;justify-content:center;margin-top:{{word_topmargin}}px;border-right:2px solid white;align-items:center;'>
+          <text style='font-size:38rpx'>{{from_cetday}}</text>天
           </view>
-          <view><image src="https://sanleisen.cn/photo/CET/icons/sun1.png" style="margin-right: 15rpx;vertical-align: middle;width:50rpx; height: 50rpx;"></image>day{{index+1}}</view>
+          <view style='font-size:14px;border-right:2px solid white;'>
+            考试倒数
+          </view>
+      </view>
+      <view class='right_title' style='background-color: rgb(241, 242, 255);height:{{circle_height}}px;color:#666666;' bindtap='aim_change'>
+        <view style='font-size:15px;font-weight:bold;display:flex;justify-content:center;margin-top:{{word_topmargin}}px;border-left:2px solid white;'>
+
+
+
+            <picker
+              mode="multiSelector"
+              bindchange="bindMultiPickerChange"
+              bindcolumnchange="bindMultiPickerColumnChange"
+              value="{{multiIndex}}"
+              range="{{multiArray}}"
+            >
+              <view class="picker" style='font-size:38rpx'>
+              {{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}{{multiArray[2][multiIndex[2]]}}
+              </view>
+            </picker>
+
+
+          <!-- {{aim_record}}分 -->
+          </view>
+          <view style='font-size:14px;border-left:2px solid white;'>
+            考试目标
+          </view>
+      </view>
+
+      <view class='whole_circle' style='left:{{whole_circlrmargin}}px;height:{{whole_height}}px;width:{{whole_height}}px;top:{{whole_topmargin}}px;font-size:{{font_size}}px;'>
+        <view style='display:flex;justify-content:center;padding-top:30rpx;color:white;'>
+          已经学习
+        </view>
+        <view style='text-align:center;font-size:50rpx;color:rgb(81,64,64)'>
+          {{online_time}}
+          </view>
+          <view style='display:flex;justify-content:center;color:white;'>
+          分钟
         </view>
       </view>
-    </block>
-  </scroll-view>
-</view>
 
-
-
-
-<view class='sixAndFour'>
-  <!-- 四六级title -->
-  <view class='title'>
-    <view class='titleitem'>
-      <image src="https://sanleisen.cn/photo/CET/icons/AB.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
-      <text>CET4</text>
-    </view>
-
-    <view class='titleitem'>
-      <image src="https://sanleisen.cn/photo/CET/icons/En.png" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
-      <text>CET6</text>
-    </view>
-  </view>
-
-
-  <view class='sixAndFourItem'>
-    <!-- 四级 -->
-    <view class='item' bindtap="goToCetFour">
-      <view>
-        <image src='/images/yingwen1.jpg'></image>
-      </view>
-      <view class='text'>四级</view>
-    </view>
-
-
-    <!-- 六级 -->
-    <view class='item' bindtap="goToCetSix">
-      <view>
-        <image src='/images/yingwen3.jpg'></image>
-      </view>
-      <view class='text'>六级</view>
-    </view>
+      <view class='tuoyuan' style='left:{{tuoyuan_margin}}px;top:{{tuoyuan_top}}px'> <view style='text-align:center;font-size:48rpx;color:rgb(178,181,236);padding-top:40rpx;'>每周美文</view></view>
   </view>
 </view>
+
+
+<!-- 轮播 -->
+<swiper circular='true' autoplay='false'>
+  <block wx:for="{{meiwen_info}}" wx:key="id">
+  <swiper-item>
+    <view class='box' style='' bindtap='meiwen' id='{{index}}'>
+      <view style='background-image:url(https://sanleisen.cn/photo/meiwen_img/{{item.image_temp}});z-index:-1;height:150px;width:90%;margin-left:5%;border-radius:15rpx;filter:blur(2.5px);z-index:-1;position:absolute;'>
+      </view>
+      <view style='display:flex;padding-left:80rpx;padding-top:35rpx;color:#ccc;'>{{item.time}}</view>
+      <view class='swiper_title'>
+        <!-- <view>{{item.time}}</view> -->
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </swiper-item>
+  </block>
+</swiper>
+
+
+<button style='margin-top:60rpx;height:140rpx;width:85%;display:flex;background-color:rgb(185,216,242);color:white' bindtap='navigate_do' id='1'>
+  <view style=''>
+  <view style='color:rgb(219,229,238);margin-top:-10rpx;'>
+    CET4
+    </view>
+    <view style='margin-top:-72rpx;font-size:60rpx;'>
+    四级
+  </view>
+  </view>
+  <view class="weui-cell__ft weui-cell__ft_in-access" style='color:white;padding-left:380rpx;'></view>
+      <!-- <i-progress percent="45" status="active"></i-progress> -->
+</button>
+
+<button style='margin-top:30rpx;height:140rpx;width:85%;display:flex;background-color:rgb(172,225,220);color:white;margin-bottom:20px' bindtap='navigate_do' id='2'>
+  <view style=''>
+  <view style='color:rgb(219,229,238);margin-top:-10rpx;'>
+    CET6
+    </view>
+    <view style='margin-top:-72rpx;font-size:60rpx;'>
+    六级
+  </view>
+    </view>
+  <view class="weui-cell__ft weui-cell__ft_in-access" style='color:white;justify-content:flex-end;padding-left:380rpx;'></view>
+      <!-- <i-progress percent="45" status="active"></i-progress> -->
+</button>

@@ -1,1 +1,60 @@
 /* pages/my/change.wxss */
+.fake_botton{
+  color: #fff;
+  background-color: #07c160;
+  border: 1px solid #07c160;
+  position: absolute;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 28px;
+  padding-left: 10px;
+  flex-shrink: 0;
+  /* justify-content: flex-end */
+  /* margin-left: 40px */
+  /* justify-content: right */
+  right: 30px;
+}
+.fake{
+  width: 100%;
+  display: flex;
+  padding: 10px 8px 15px;
+  box-sizing: border-box;
+  line-height: 24px;
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  overflow: visible;
+
+}
+.fake_title{
+  flex: 1;
+  max-width: 90px;
+  min-width: 90px;
+  display: flex
+}
+.fake_input{
+  color: #999;
+  overflow: hidden;
+  text-align: right;
+  vertical-align: middle;
+}
+.fake_picker{
+  width: 100%;
+  height: 24px;
+  text-align: left;
+  min-height: 24px;
+  color: #333;
+  line-height: inherit;
+  display: flex;
+  padding-left: 25px;
+}
+.fake_field{
+  display: flex;
+  align-items: center;
+}

@@ -22,7 +22,7 @@ Page({
         paper:array
       })
     }
-    console.log("paper",this.data.paper,e.cet)
+    // console.log("paper",this.data.paper,e.cet)
     this.setData({
       cet:e.cet
     })

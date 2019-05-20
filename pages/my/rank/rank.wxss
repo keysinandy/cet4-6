@@ -1,114 +1,154 @@
-/* pages/my/rank/rank.wxss */
 
-/* navbar */
-.daily .navbar{
-  background: #87a9eb;
-  width: 100%;
-  height:100rpx;
-  color: #ffffff;
+
+.avatar_style_first{
+  vertical-align: middle;
+  width:140rpx;
+  height: 140rpx;
+  border-radius: 50%;
 
 }
-
-.daily .inner{
-  width: 60%;
-   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin:  0 auto;
+.avatar_style_other{
+   vertical-align: middle;
+  width:120rpx;
+  height: 120rpx;
+  border-radius: 50%;
 }
-
-.daily .item{
-  width: 35%;
+.avatar_style_others{
+   vertical-align: middle;
+  width:100rpx;
   height: 100rpx;
-  line-height: 100rpx;
-  border:4rpx solid #fff;
-  border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
-  text-align: center;
-}
+  border-radius: 50%;
+  z-index:-1;
+position:relative;
 
-.active{
-  background: #fff;
-  color:#87a9eb;
-   border:4rpx solid #87a9eb;
 }
 
 
-/*内容*/
-.content{
-  margin: 20rpx;
-  font-size: 27rpx;
+.top_block{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70rpx;
+  /* z-index: -1; */
+}
+.bottom_block{
+  display: flex;
+  flex-direction: column
 }
 
 
-.content .title{
-  font-size: 32rpx;
-  margin: 0 auto;
-  width:300rpx;
-  height:90rpx;
-  line-height: 90rpx;
-  color:#0099CC;
-  border-bottom:5rpx solid #87a9eb;
-}
-
-
-/* 排行榜的具体内容 */
-
-/* 防止溢出 */
-.theusername{
-    width: 200rpx;
-    height:60rpx;
-  	white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+.next_twoblock{
+  display: flex;
+  justify-content:space-between;
+  margin-top:-70rpx;
 }
 
 
 
-/* 前三 */
-.champions{
- height:85rpx;
-  width:85rpx;
+
+.whole_circle{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius:50%;
+  border:4px solid transparent;
+  border-left:4px solid rgb(241, 242, 255);
+  border-bottom:4px solid rgb(241, 242, 255);
+  border-right:4px solid rgb(241, 242, 255);
+  border-top:4px solid rgb(241, 242, 255);
+  position: relative;
+}
+
+.first_person{
+  display:flex;
+  justify-content:center;
+  margin-top:60rpx;
+
+}
+.second_person{
+  padding-left:70rpx;
+
+}
+.third_person{
+  padding-right:70rpx;
+}
+.nickname{
+   font: 15px/1.5 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
+   font-weight: bold;
+   text-align:center;
+  padding-top:12rpx;
+
+}
+.bottom_name{
+  font: 15px/1.5 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
+   font-weight: bold;
+   padding-top:30rpx;
+}
+.bottom_record{
+font-size: 15px;
+  text-align:right;
+  color:#00CCFF;
+  padding-left:315rpx;
+font-weight:bold;
+right:100rpx;
+position:absolute;
+
+padding-top:30rpx;
+
+}
+.record{
+  font-size: 12px;
+  text-align:center;
+  color:#00CCFF;
+
+}
+.others_view{
+  margin-left:35rpx;
+}
+.discribe{
+padding-left:30rpx;
+display:flex;
+border-bottom:1px solid;
+border-bottom-color:#cccccc9f;
+height:125rpx;
+width:70%;
+margin-bottom:12rpx;
+
+}
+.badge{
+  /* position:absolute; */
+right:0;
+width: 20px;
+/* top:-8px; */
+color:#fff;
+font-size:12px;
+font-weight:500;
+font-family:PingFang SC,Helvetica Neue,Arial,sans-serif;
+text-align:center;
+box-sizing:border-box;
+/* padding:0 3px; */
+/* min-width:18px; */
+line-height:18px;
+/* border:1px solid #fff; */
+border-radius:50%;
+background-color:rgba(68, 180, 255, 0.747);
+/* -webkit-transform:translateX(50%);
+transform:translateX(50%);
+-webkit-transform-origin:100%; */
+/* transform-origin:100%; */
+margin-top:-20rpx;
+z-index:12;
+
+
+}
+.share{
   position: absolute;
-  left:36rpx;
+  top:20rpx;
+  right: 20rpx
 }
-
-.championImage{
-  width:85rpx;
-  height:85rpx;
+button{
+  background-color: rgba(255,255,255,0);
+  border: none;
+  border-radius: none;
 }
-
-/* 前三整体高度  */
- .weui-three{
-   height:100rpx;
- }
- 
-
- /* 从第四名开始 */
- .weui-rest{
-    height:60rpx;
- }
- 
-
- .num{
-  height:50rpx;
-  width:50rpx;
-  position: absolute;
-  left:59rpx;
-  top:70rpx;
-}
-
-
-.sun{
-  height:50rpx;
-  width:55rpx;
-}
-
-
-.number{
-  font-size:30rpx;
-  color:#fff;
-  position: absolute;
-  top:9rpx;
-  right:11rpx;
+button::after{
+  border: none;
 }

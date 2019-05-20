@@ -1,0 +1,22 @@
+<van-cell-group>
+<van-cell
+  title="英语四级"
+  is-link
+  url="./content?id=0&show_false={{show_false}}"
+/>
+
+<van-cell
+  title="英语六级"
+  is-link
+  url="./content?id=1&show_false={{show_false}}"
+/>
+</van-cell-group>
+
+<view style='margin-top:50rpx;display:flex;align-items:center;'>
+<view style='justify-content:flex-start'>
+  <switch bindchange="switch1Change"  color='#87a9eb'/>
+</view>
+  <view style='margin-left:15rpx;font-size:24rpx;color:#ccc;'>
+    显示全部题目
+  </view>
+</view>

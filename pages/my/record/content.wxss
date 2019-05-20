@@ -1,49 +1,50 @@
-/**index.wxss**/
-page{
+@import "../../../template/collectrecordcommon.wxss";
+.leftbox .source2{
+  color:#8C8D8F;
+  font-size:25rpx;
+  margin:15rpx 0 5rpx 0;
+}
+
+.rightbox .score{
+  font-size:28rpx;
+  margin-bottom: 18rpx;
+}
+
+.rightbox .number{
+  color:#f40;
+  margin-left:20rpx;
+}
+
+
+
+.rightbox .time{
+  color:#1989FA;
+  margin-left:20rpx;
+}
+.whole_circle{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+  border:4px solid transparent;
+  border-left:4px solid rgb(241, 242, 255);
+  border-bottom:4px solid rgb(241, 242, 255);
+  border-right:4px solid rgb(241, 242, 255);
+  border-top:4px solid rgb(241, 242, 255);
+  position: relative;
+}
+
+
+
+/* 未记录文字 */
+/* .collectwrapper {
+  text-align: center;
   width: 100%;
 }
-.swiper{
-  height: 328rpx;
-}
-.slide-image{
-  width: 750rpx;
-  height: 328rpx;
-}
-.border{
-  display: flex;
-  flex-direction: row;
-  background-color: #fff;
-  padding: 20rpx;
-  height: 120rpx;
-  border-top: 1rpx #ccc solid;
-}
-.icon{
-  width: 120rpx;
-  height: 120rpx;
-  margin-right: 30rpx;
-  
-}
-.contain{
-  width: 550rpx;
-  line-height: 40rpx;
-  font-size: 32rpx;
-}
-.subtitle{
-  color: #aaa;
-  font-size: 28rpx;
-  line-height: 32rpx;
-}
-.foot {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30rpx;
-  margin-bottom: 40rpx;
-  font-size: 28rpx;
-  color: #999;
-}
-#footLine {
-  border-top: 3rpx solid #ddd;
-  width: 140rpx;
-}
+
+
+.collect{
+  color:#808080;
+  font-size:28rpx;
+} */
+
+

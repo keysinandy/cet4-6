@@ -1,0 +1,17 @@
+/* pages/my/collect/content.wxss */
+@import "../../../template/collectrecordcommon.wxss";
+
+.leftbox .source1{
+  margin-top: 18rpx;
+}
+.leftbox .source2{
+  color:#8C8D8F;
+  font-size:25rpx;
+  margin-top:26rpx;
+  margin-left: 5rpx;
+}
+
+.rightbox {
+  margin:32rpx;
+}
+

@@ -1,50 +1,77 @@
-// 后端所有需要请求的数据:用户的头像昵称和分数.赋值给userInfo1,userInfo2,在changestyle函数里赋值.
 var Url = 'https://sanleisen.cn'
+var rankUrl = require('../../../config.js').rankUrl;
 Page({
   data: {
-    itemstyle1: "item active",
-    itemstyle2: "item",
-    title: "四级",
-    // userInfo传入用户的头像，昵称，分数,以下为虚拟数据
-    userInfo1:[
-      { avatar: Url+"/photo/CET/avatars/1.jpg", username: '111', score: '740' },
-      { avatar: Url +"/photo/CET/avatars/2.jpeg", username: '222', score: '710' },
-      { avatar: Url +"/photo/CET/avatars/3.jpeg", username: '333', score: '700' }
-    ],
-    userInfo2:[
-      { avatar: Url +"/photo/CET/avatars/4.jpeg", username: '444', score: '655' },
-      { avatar: Url +"/photo/CET/avatars/5.jpeg", username: '555', score: '645' },
-      { avatar: Url +"/photo/CET/avatars/6.jpeg", username: '666', score: '633' },
-      { avatar: Url +"/photo/CET/avatars/7.jpeg", username: '777', score: '610' },
-      { avatar: Url +"/photo/CET/avatars/8.jpg", username: '888', score: '592' },
-      { avatar: Url +"/photo/CET/avatars/9.jpg", username: '999', score: '587' },
-      { avatar: Url +"/photo/CET/avatars/10.jpeg", username: '1010101111111111111', score: '555' }
-    ]
-      },
+    FourInfo1: [],
+    FourInfo2: [],
+    SixInfo1: [],
+    SixInfo2: [],
+    eggInfo1: [],
+    eggInfo2: [],
+    count_minute1: [],
+    count_minute2: [],
+    current:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+    show_cet: false
+  },
+
   onLoad: function (options) {
-
-  },
-  // navbar切换
-  changestyle: function (e) {
-    var index = e.target.dataset.index;
-    if (index == "a") {
-      // 在这里请求四级数据赋值给userInfo1,userInfo2
-      this.setData({
-        itemstyle1: "item active",
-        itemstyle2: "item",
-        title: "四级"
-      })
-    } else {
-      // 在这里请求六级数据赋值给userInfo1,userInfo2
-      this.setData({
-        itemstyle1: "item",
-        itemstyle2: "item active",      
-        title: "六级"
-      })
-    }
-  },
-
-  thenextqustion: function () {
-    // 从后台重新请求数据
+    const openid = wx.getStorageSync('openid')
+    var usr = wx.getStorageSync('userInfo')
+    wx.showLoading({
+      title: 'Loading',
+      mask:true
+    })
+    wx.getSetting({
+      success(e) {
+        console.log(e.authSetting)
+        if (e.authSetting['scope.userInfo'] == false || JSON.stringify(e.authSetting) == "{}") {
+          wx.showModal({
+            title: '提示',
+            content: '您未授权信息,天梯排行可能无法正常运行,请到信息设置授权',
+            showCancel: false,
+            success(e){
+              wx.redirectTo({
+                url: '../myInfo/myInfo',
+              })
+            }
+          })
+        } else if(usr.name == null){
+          wx.showModal({
+            title: '提示',
+            content: '您的昵称未完善,天梯排行可能无法正常运行,请到信息设置完善昵称信息',
+            showCancel: false,
+            success(e) {
+              wx.redirectTo({
+                url: '../myInfo/myInfo',
+              })
+            }
+          })
+        }
+      }
+    })
+    wx.request({
+      url: rankUrl,
+      method: "POST",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: res => {
+        console.log(res.data);
+        this.setData({
+          FourInfo1: res.data.data.FoueInfo[0],
+          FourInfo2: res.data.data.FoueInfo[1],
+          SixInfo1: res.data.data.SixInfo[0],
+          SixInfo2: res.data.data.SixInfo[1],
+          eggInfo1: res.data.data.duck_egg[0],
+          eggInfo2: res.data.data.duck_egg[1],
+          count_minute1: res.data.data.count_minute[0],
+          count_minute2: res.data.data.count_minute[1],
+        })
+        wx.hideLoading()
+      },
+      fail: res => {
+        console.log(res);
+      }
+    })
   }
 })
